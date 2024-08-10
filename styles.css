@@ -14,7 +14,7 @@ a {
 	float: left;
 	position: absolute;
 	margin-left: 15px;
-	margin-top: 22px;
+	margin-top: 12px;
 }
 
 #sidebar img {
@@ -24,9 +24,11 @@ a {
 	border-width: 3px;
 	border-color: red;
 	background-color: yellow;
+	margin-top: 10px;
 }
 
 #sidebar img:hover {
 	width: 45px;
 	margin: 2.5px;
+	margin-top: 12.5px;
 }
