@@ -15,6 +15,10 @@ a {
 	position: absolute;
 	margin-left: 15px;
 	margin-top: 22px;
+}
+
+#sidebar img {
+	width: 50px;
 	padding: 10px;
 	border-style: ridge;
 	border-width: 3px;
@@ -22,10 +26,7 @@ a {
 	background-color: yellow;
 }
 
-#sidebar img {
-	width: 50px;
-}
-
 #sidebar img:hover {
 	width: 45px;
+	margin: 2.5px;
 }
