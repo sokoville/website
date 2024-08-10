@@ -1,0 +1,66 @@
+class MusicPlayer extends HTMLElement {
+	constructor() {
+	  super();
+	}
+  
+	connectedCallback() { this.innerHTML = `
+		<div style="position:absolute;right: 20rem;"> 
+			<div id="music_player">
+				<div id="music_player_title_bar">Media Player</div>
+				<audio id="music_player_audio" controls autoplay><source src="music/black smurf - king smurf.ogg"></audio>
+				<!-- <img id="music_player_play_pause_button" src="images/play button.png"> -->
+			</div>
+		</div>
+
+		<script>
+			var audio = document.getElementById("music_player_audio")
+			dragElement(document.getElementById("music_player"))
+
+			audio.play()
+
+
+			function dragElement(elmnt) {
+					var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+					if (document.getElementById(elmnt.id + "header")) {
+					// if present, the header is where you move the DIV from:
+					document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+					} else {
+					// otherwise, move the DIV from anywhere inside the DIV:
+					elmnt.onmousedown = dragMouseDown;
+				}
+
+				function dragMouseDown(e) {
+					e = e || window.event;
+					e.preventDefault();
+					// get the mouse cursor position at startup:
+					pos3 = e.clientX;
+					pos4 = e.clientY;
+					document.onmouseup = closeDragElement;
+					// call a function whenever the cursor moves:
+					document.onmousemove = elementDrag;
+				}
+
+				function elementDrag(e) {
+					e = e || window.event;
+					e.preventDefault();
+					// calculate the new cursor position:
+					pos1 = pos3 - e.clientX;
+					pos2 = pos4 - e.clientY;
+					pos3 = e.clientX;
+					pos4 = e.clientY;
+					// set the element's new position:
+					elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+					elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+				}
+
+				function closeDragElement() {
+					// stop moving when mouse button is released:
+					document.onmouseup = null;
+					document.onmousemove = null;
+				}
+			}
+		</script>
+	`;}
+}
+
+customElements.define('music-player-component', MusicPlayer);
