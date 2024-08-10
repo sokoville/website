@@ -2,6 +2,7 @@ body {
 	background-color: black;
 	color: white;
 	text-align: left;
+	background-image: url("images/granite texture 2.JPG");
 }
 
 a {
@@ -12,11 +13,11 @@ a {
 #sidebar {
 	float: left;
 	position: absolute;
-	margin-left: 14px;
-	margin-top: 21px;
+	margin-left: 15px;
+	margin-top: 22px;
 	padding: 10px;
 	border-style: ridge;
-	border-width: 4px;
+	border-width: 3px;
 	border-color: red;
 	background-color: yellow;
 }
