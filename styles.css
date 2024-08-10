@@ -24,3 +24,7 @@ a {
 #sidebar img {
 	width: 50px;
 }
+
+#sidebar img:hover {
+	width: 45px;
+}
