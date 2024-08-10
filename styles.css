@@ -8,3 +8,19 @@ a {
 	color: Crimson;
 	font-weight: lighter;
 }
+
+#sidebar {
+	float: left;
+	position: absolute;
+	margin-left: 14px;
+	margin-top: 21px;
+	padding: 10px;
+	border-style: ridge;
+	border-width: 4px;
+	border-color: red;
+	background-color: yellow;
+}
+
+#sidebar img {
+	width: 50px;
+}
