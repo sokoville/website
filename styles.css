@@ -2,7 +2,9 @@ body {
 	background-color: black;
 	color: white;
 	text-align: left;
-	background-image: url("images/granite texture 2.JPG");
+	background-image: url("images/texturen/graniet_donker.jpg");
+	margin: 0px;
+
 }
 
 a {
@@ -10,28 +12,63 @@ a {
 	font-weight: lighter;
 }
 
-#sidebar {
+footer {
+	position: absolute; 
+	bottom: 0em; 
+	text-align: center; 
+	width: 90%; 
+	left: 5%; 
+	height: calc(3em + 31px); 
+}
+
+.content {
+	padding-bottom: calc(3em + 31px);
+}
+
+#page_container {
+	min-height: 100vh;
+	position: relative;
+}
+
+#navbar {
 	float: left;
 	position: absolute;
 	margin-left: 15px;
 	margin-top: 12px;
 }
 
-#sidebar img {
+#navbar img {
 	width: 50px;
 	padding: 10px;
 	border-style: ridge;
 	border-width: 3px;
-	border-color: red;
-	background-color: yellow;
 	margin-top: 10px;
 }
 
-#sidebar img:hover {
+#navbar img:hover {
 	width: 45px;
 	margin: 2.5px;
 	margin-top: 12.5px;
 }
+
+#navbar_home {
+	border-color: red;
+	background-color: yellow;
+}
+
+#navbar_links {
+	background-color: rgb(218, 218, 219); 
+	border-color: #86a1be;
+}
+
+
+
+
+
+
+
+
+
 
 #music_player {
 	position: absolute; 
