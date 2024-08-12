@@ -28,17 +28,7 @@ class Comments extends HTMLElement {
 				</div>
 			</form>
 			<br>
-			<div id="comments_list" style="text-align: left;">
-				<div class="comment_line">
-					<span class="timestamp">timestamp</span> <span>(anon) very cool test message that exists yes.</span>
-				</div>
-				<div class="comment_line">
-					<span class="timestamp">timestamp</span> <span>(anon) ik haat tosti</span>
-				</div>
-				<div class="comment_line">
-					<span class="timestamp">timestamp</span> <span>(anon) maak jezelf dood ik hou zo veel van toast</span>
-				</div>
-			</div>
+			<div id="comments_list" style="text-align: left;"></div>
 			<iframe id="hiddenIFrame" name="hiddenIFrame" style="display: none;"></iframe>
 		</div>
 	`;}
