@@ -100,7 +100,7 @@ function getComments() {
 				var span2 = document.createElement("span")
 				span2.appendChild(document.createTextNode(comments[i]["Text"]))
 
-				document.body.insertAf(comment_line, document.getElementById("comments_list"))
+				document.body.insertBefore(comment_line, document.getElementById("comments_list"))
 			}
 		}
 	})
