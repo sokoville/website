@@ -96,12 +96,13 @@ function getComments() {
 				
 				var span1 = document.createElement("span")
 				span1.appendChild(document.createTextNode(comments[i]["Timestamp2"]))
+				span1.style = "color: grey;"
 
 				var span2 = document.createElement("span")
 				span2.appendChild(document.createTextNode(comments[i]["Text"]))
 
 				comment_line.appendChild(span1)
-				comment_line.appendChild(document.createTextNode("  <anon> "))
+				comment_line.appendChild(document.createTextNode(" (anon) "))
 				comment_line.appendChild(span2)
 				document.getElementById("comments_list").appendChild(comment_line)
 			}
