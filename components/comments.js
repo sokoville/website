@@ -85,7 +85,7 @@ function getComments() {
 
 		if (comments.length == 0 || Object.keys(comments[0]).length < 2) { // Once again, Google Sheets can be weird
 			c_container.innerHTML = s_noCommentsText;
-		} else {print(comments)}
+		} else {console.log(comments)}
 	})
 }
 
