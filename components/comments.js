@@ -101,7 +101,7 @@ function getComments() {
 				span2.appendChild(document.createTextNode(comments[i]["Text"]))
 
 				comment_line.appendChild(span1)
-				comment_line.appendChild(document.createTextNode("&nbsp&nbsp"))
+				comment_line.appendChild(document.createTextNode("  <anon> "))
 				comment_line.appendChild(span2)
 				document.getElementById("comments_list").appendChild(comment_line)
 			}
