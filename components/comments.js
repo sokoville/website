@@ -34,7 +34,7 @@ customElements.define('comments-component', Comments);
 function doSubmit() {
 	document.getElementById("comment").submit();
 	getComments();
-	createComment("now", document.getElementById("comment_text"), "anon")
+	createComment("now", document.getElementById("comment_text").value, "anon")
 }
 
 function getSheet(url) {
@@ -101,11 +101,11 @@ function getComments() {
 		if (comments.length == 0 || Object.keys(comments[0]).length < 2) { // Once again, Google Sheets can be weird
 			c_container.innerHTML = s_noCommentsText;
 		} else {
-			/*let child = document.getElementById("comments_list").lastElementChild;
+			let child = document.getElementById("comments_list").lastElementChild;
        		while (child) {
             	document.getElementById("comments_list").removeChild(child);
             	child = document.getElementById("comments_list").lastElementChild;
-        	}*/
+        	}
 
 			for (i = 0; i < comments.length; i++) {
 				createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
