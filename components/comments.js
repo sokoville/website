@@ -40,8 +40,7 @@ function doSubmit() {
 		child = document.getElementById("comments_list").lastElementChild;
 	}
 
-	getComments().then(createComment("now", document.getElementById("comment_text").value, "anon"));
-	//createComment("now", document.getElementById("comment_text").value, "anon");
+	getComments(true);
 }
 
 function getSheet(url) {
@@ -82,7 +81,7 @@ function createComment(timestamp, text, name) {
 	document.getElementById("comments_list").appendChild(comment_line)
 }
 
-function getComments() {
+function getComments(postSubmit) {
 	const retrievedSheet = getSheet("https://docs.google.com/spreadsheets/d/1TT3XDPxiuQzVrhKWI5Zqzf6rkQHrdxeXyZMfd-s_elU/gviz/tq?");
 
 	retrievedSheet.then(result => {
@@ -112,14 +111,16 @@ function getComments() {
 				createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
 			}
 
+			if (postSubmit) {
+				createComment("now", document.getElementById("comment_text").value, "anon");
+			}
+
 			document.getElementById("comment").reset();
 		}
 	})
-
-	return true;
 }
 
 
-getComments();
+getComments(false);
 
 //ADD RESETTING WHEN YOU PRESS SUBMIT THEN GETTING THE COMMENTS AGAIN OR APPENDING YOUR COMMENT TO THE END EITHER WAY
