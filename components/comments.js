@@ -13,13 +13,13 @@ class Comments extends HTMLElement {
 	}
   
 	connectedCallback() { this.innerHTML = `
-		<div id="comments" style="width: 50%; padding-left: 25%;">
+		<div id="comments" style="width: 40%; padding-left: 30%;">
 			<form id="comment" method="post" target="hiddenIFrame" action="https://docs.google.com/forms/d/e/1FAIpQLSeOuc8fWSWlMClU_rPn2nh7iTmXoRmmLwcC23xosuMcXx3cdQ/formResponse">
 				<div>
 					Comment:
 					<input type="text" name="entry.1007718193" name="entry.1007718193" maxlength="140" minlength="3" value="" style="width: 40%" required>
 					<input type="submit" value="Comment"><br>
-					<span style="font-size: .75em">(prefer English or Nederlandes language)</span>
+					<span style="font-size: .75em">(prefer English or Nederlands language)</span>
 				</div>
 			</form>
 			<br>
@@ -87,7 +87,14 @@ function getComments() {
 				span2.appendChild(document.createTextNode(comments[i]["Text"]))
 
 				comment_line.appendChild(span1)
-				comment_line.appendChild(document.createTextNode(" (anon) "))
+
+				if (!comments[i]["Name"] == "") {
+					comment_line.appendChild(document.createTextNode("comments[i]['Name'].concat(' ', comments[i]['Name'], ' ')"))
+				} else {
+					comment_line.appendChild(document.createTextNode(" (anon) "))
+				}
+
+				comment_line.appendChild(document.createTextNode("(anon)"))
 				comment_line.appendChild(span2)
 				document.getElementById("comments_list").appendChild(comment_line)
 			}
@@ -97,3 +104,5 @@ function getComments() {
 
 
 getComments();
+
+//ADD RESETTING WHEN YOU PRESS SUBMIT THEN GETTING THE COMMENTS AGAIN OR APPENDING YOUR COMMENT TO THE END EITHER WAY
