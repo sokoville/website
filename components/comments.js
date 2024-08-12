@@ -89,7 +89,7 @@ function getComments() {
 				comment_line.appendChild(span1)
 
 				if (!comments[i]["Name"] == "") {
-					comment_line.appendChild(document.createTextNode("comments[i]['Name'].concat(' ', comments[i]['Name'], ' ')"))
+					comment_line.appendChild(document.createTextNode("comments[i]['Name'].concat(' (', comments[i]['Name'], ') ')"))
 				} else {
 					comment_line.appendChild(document.createTextNode(" (anon) "))
 				}
