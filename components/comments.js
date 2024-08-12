@@ -18,7 +18,7 @@ class Comments extends HTMLElement {
 				<div>
 					Comment:
 					<input id="comment_text" type="text" name="entry.1007718193" maxlength="140" minlength="3" value="" style="width: 40%" required>
-					<input style="display: none;" name="entry.1374517791" value=(location.pathname) >
+					<input type="hidden" name="entry.1374517791" value=(location.pathname)>
 					<input type="submit" value="Comment"><br>
 					<span style="font-size: .75em">(prefer English or Nederlands language)</span>
 				</div>
@@ -109,7 +109,9 @@ function getComments(postSubmit) {
 			c_container.innerHTML = s_noCommentsText;
 		} else {
 			for (i = 0; i < comments.length; i++) {
-				createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
+				if (comments[i]["Page"] == location.pathname) {
+					createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
+				}
 			}
 
 			if (postSubmit) {
