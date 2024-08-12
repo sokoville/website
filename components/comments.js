@@ -17,7 +17,7 @@ class Comments extends HTMLElement {
 			<form id="comment" method="post" target="hiddenIFrame" onSubmit="doSubmit();" action="https://docs.google.com/forms/d/e/1FAIpQLSeOuc8fWSWlMClU_rPn2nh7iTmXoRmmLwcC23xosuMcXx3cdQ/formResponse">
 				<div>
 					Comment:
-					<input type="text" name="entry.1007718193" name="entry.1007718193" maxlength="140" minlength="3" value="" style="width: 40%" required>
+					<input id="comment_text" type="text" name="entry.1007718193" name="entry.1007718193" maxlength="140" minlength="3" value="" style="width: 40%" required>
 					<input type="submit" value="Comment"><br>
 					<span style="font-size: .75em">(prefer English or Nederlands language)</span>
 				</div>
@@ -34,6 +34,7 @@ customElements.define('comments-component', Comments);
 function doSubmit() {
 	document.getElementById("comment").submit();
 	getComments();
+	createComment("now", document.getElementById("comment_text"), "anon")
 }
 
 function getSheet(url) {
@@ -48,6 +49,30 @@ function getSheet(url) {
             }
         })
 	})
+}
+
+function createComment(timestamp, text, name) {
+	var comment_line = document.createElement("div");
+	comment_line.className = "comment_line"
+	document.getElementById("comments_list").appendChild(comment_line)
+	
+	var span1 = document.createElement("span")
+	span1.appendChild(document.createTextNode(timestamp))
+	span1.style = "color: grey;"
+
+	var span2 = document.createElement("span")
+	span2.appendChild(document.createTextNode(text))
+
+	comment_line.appendChild(span1)
+
+	if (!comments[i]["Name"] == "") {
+		comment_line.appendChild(document.createTextNode(" (".concat(name, ') ')))
+	} else {
+		comment_line.appendChild(document.createTextNode(" (anon) "))
+	}
+
+	comment_line.appendChild(span2)
+	document.getElementById("comments_list").appendChild(comment_line)
 }
 
 function getComments() {
@@ -83,30 +108,7 @@ function getComments() {
         	}
 
 			for (i = 0; i < comments.length; i++) {
-				console.log(comments[i]["Text"])
-				console.log(comments[i]["Timestamp2"])
-
-				var comment_line = document.createElement("div");
-				comment_line.className = "comment_line"
-				document.getElementById("comments_list").appendChild(comment_line)
-				
-				var span1 = document.createElement("span")
-				span1.appendChild(document.createTextNode(comments[i]["Timestamp2"]))
-				span1.style = "color: grey;"
-
-				var span2 = document.createElement("span")
-				span2.appendChild(document.createTextNode(comments[i]["Text"]))
-
-				comment_line.appendChild(span1)
-
-				if (!comments[i]["Name"] == "") {
-					comment_line.appendChild(document.createTextNode(" (".concat(comments[i]['Name'], ') ')))
-				} else {
-					comment_line.appendChild(document.createTextNode(" (anon) "))
-				}
-
-				comment_line.appendChild(span2)
-				document.getElementById("comments_list").appendChild(comment_line)
+				createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
 			}
 
 			document.getElementById("comment").reset();
