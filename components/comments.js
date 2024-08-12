@@ -115,6 +115,8 @@ function getComments() {
 			document.getElementById("comment").reset();
 		}
 	})
+
+	return true;
 }
 
 
