@@ -14,7 +14,15 @@ class Comments extends HTMLElement {
   
 	connectedCallback() { this.innerHTML = `
 		<div id="comments" style="width: 40%; padding-left: 30%;">
-			<form id="comment" method="post" target="hiddenIFrame" action="https://docs.google.com/forms/d/e/1FAIpQLSeOuc8fWSWlMClU_rPn2nh7iTmXoRmmLwcC23xosuMcXx3cdQ/formResponse">
+			<script>
+				function doSubmit() {
+					submit();
+					reset();
+					getComments();
+				}
+			</script>
+
+			<form id="comment" method="post" target="hiddenIFrame" onSubmit="doSubmit()" action="https://docs.google.com/forms/d/e/1FAIpQLSeOuc8fWSWlMClU_rPn2nh7iTmXoRmmLwcC23xosuMcXx3cdQ/formResponse">
 				<div>
 					Comment:
 					<input type="text" name="entry.1007718193" name="entry.1007718193" maxlength="140" minlength="3" value="" style="width: 40%" required>
@@ -46,6 +54,8 @@ function getSheet(url) {
 }
 
 function getComments() {
+	document.getElementById("comments").clearChildren()
+
 	const retrievedSheet = getSheet("https://docs.google.com/spreadsheets/d/1TT3XDPxiuQzVrhKWI5Zqzf6rkQHrdxeXyZMfd-s_elU/gviz/tq?");
 
 	retrievedSheet.then(result => {
