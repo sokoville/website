@@ -85,7 +85,7 @@ function getComments() {
 				document.getElementById("comments_list").appendChild(comment_line)
 				
 				var span1 = document.createElement("span")
-				span1.appendChild(document.createTextNode(comments[i]["Timestamp2"]))
+				span1.appendChild(document.createTextNode(comments[i]["Timestamp"]))
 				span1.style = "color: grey;"
 
 				var span2 = document.createElement("span")
