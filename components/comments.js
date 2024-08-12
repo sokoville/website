@@ -54,7 +54,7 @@ function getSheet(url) {
 }
 
 function getComments() {
-	document.getElementById("comments").clearChildren()
+	document.getElementById("comments_list").clearChildren()
 
 	const retrievedSheet = getSheet("https://docs.google.com/spreadsheets/d/1TT3XDPxiuQzVrhKWI5Zqzf6rkQHrdxeXyZMfd-s_elU/gviz/tq?");
 
