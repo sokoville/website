@@ -33,7 +33,6 @@ customElements.define('comments-component', Comments);
 
 function doSubmit() {
 	document.getElementById("comment").submit();
-	document.getElementById("comment").reset();
 	getComments();
 }
 
@@ -109,6 +108,8 @@ function getComments() {
 				comment_line.appendChild(span2)
 				document.getElementById("comments_list").appendChild(comment_line)
 			}
+
+			document.getElementById("comment").reset();
 		}
 	})
 }
