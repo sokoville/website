@@ -17,9 +17,9 @@ class Comments extends HTMLElement {
 			<form id="comment" method="post" target="hiddenIFrame" action="https://docs.google.com/forms/d/e/1FAIpQLSeOuc8fWSWlMClU_rPn2nh7iTmXoRmmLwcC23xosuMcXx3cdQ/formResponse">
 				<div>
 					Comment:
-					<input type="text" name="entry.1007718193" name="entry.1007718193" maxlength="500" minlength="3" value="" required>
-					<input type="submit" value="Comment">
-					(prefer English or Nederlandes language)
+					<input type="text" name="entry.1007718193" name="entry.1007718193" maxlength="140" minlength="3" value="" style="width: 40%" required>
+					<input type="submit" value="Comment"><br>
+					<span style="font-size: .75em">(prefer English or Nederlandes language)</span>
 				</div>
 			</form>
 			<br>
