@@ -2,11 +2,6 @@ const s_nameId = '1395261069';
 const s_textId = '1007718193';
 const s_sheetId = '1TT3XDPxiuQzVrhKWI5Zqzf6rkQHrdxeXyZMfd-s_elU';
 
-const s_timezone = -5;
-const s_daylightSavings = true;
-const s_dstStart = ['March', 'Sunday', 2, 2];
-const s_dstEnd = ['November', 'Sunday', 1, 2];
-
 const s_commentsPerPage = 8;
 const s_commentsOpen = true;
 
@@ -85,7 +80,7 @@ function getComments() {
 				document.getElementById("comments_list").appendChild(comment_line)
 				
 				var span1 = document.createElement("span")
-				span1.appendChild(document.createTextNode(comments[i]["Timestamp"]))
+				span1.appendChild(document.createTextNode(comments[i]["Timestamp2"]))
 				span1.style = "color: grey;"
 
 				var span2 = document.createElement("span")
