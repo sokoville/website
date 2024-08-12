@@ -65,7 +65,7 @@ function createComment(timestamp, text, name) {
 
 	comment_line.appendChild(span1)
 
-	if (!comments[i]["Name"] == "") {
+	if (!name == "") {
 		comment_line.appendChild(document.createTextNode(" (".concat(name, ') ')))
 	} else {
 		comment_line.appendChild(document.createTextNode(" (anon) "))
