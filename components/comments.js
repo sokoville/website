@@ -32,8 +32,8 @@ class Comments extends HTMLElement {
 customElements.define('comments-component', Comments);
 
 function doSubmit() {
-	submit();
-	reset();
+	document.getElementById("comment").submit();
+	document.getElementById("comment").reset();
 	getComments();
 }
 
