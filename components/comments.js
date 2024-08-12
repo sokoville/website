@@ -95,13 +95,12 @@ function getComments() {
 				document.getElementById("comments_list").appendChild(comment_line)
 				
 				var span1 = document.createElement("span")
-				span1.text = comments[i]["Timestamp2"]
+				span1.appendChild(document.createTextNode(comments[i]["Timestamp2"]))
 
 				var span2 = document.createElement("span")
-				span2.text = comments[i]["Text"]
+				span2.appendChild(document.createTextNode(comments[i]["Text"]))
 
-				comment_line.appendChild(span1)
-				comment_line.appendChild(span2)
+				document.body.insertAf(comment_line, document.getElementById("comments_list"))
 			}
 		}
 	})
