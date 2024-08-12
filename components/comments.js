@@ -54,8 +54,6 @@ function getSheet(url) {
 }
 
 function getComments() {
-	console.log(document.getElementById("comments_list"))
-
 	const retrievedSheet = getSheet("https://docs.google.com/spreadsheets/d/1TT3XDPxiuQzVrhKWI5Zqzf6rkQHrdxeXyZMfd-s_elU/gviz/tq?");
 
 	retrievedSheet.then(result => {
@@ -81,6 +79,8 @@ function getComments() {
 		if (comments.length == 0 || Object.keys(comments[0]).length < 2) { // Once again, Google Sheets can be weird
 			c_container.innerHTML = s_noCommentsText;
 		} else {
+			document.getElementById("comments_list").clearChildren();
+
 			for (i = 0; i < comments.length; i++) {
 				console.log(comments[i]["Text"])
 				console.log(comments[i]["Timestamp2"])
