@@ -66,15 +66,10 @@ function getComments() {
 	retrievedSheet.then(result => {
 		const json = JSON.parse(result.split('\n')[1].replace(/google.visualization.Query.setResponse\(|\);/g, ''));
 
-	let comments = [];
+		let comments = [];
 
-	if (json.table.parsedNumHeaders > 0) {
-		for (r = 0; r < json.table.rows.length; r++) {
-			let val1;
-			if (!json.table.rows[r].c[pageIdx]) {val1 = ''}
-			else {val1 = json.table.rows[r].c[pageIdx].v}
-
-			if (val1 == v_pagePath) { 
+		if (json.table.parsedNumHeaders > 0) {
+			for (r = 0; r < json.table.rows.length; r++) {
 				let comment = {}
 				for (c = 0; c < json.table.cols.length; c++) {
 					let val2;
@@ -85,13 +80,12 @@ function getComments() {
 				}
 				comment.Timestamp2 = json.table.rows[r].c[0].f;
 				comments.push(comment);
-				}
 			}
 		}
 
 		if (comments.length == 0 || Object.keys(comments[0]).length < 2) { // Once again, Google Sheets can be weird
-            c_container.innerHTML = s_noCommentsText;
-        } else {print(comments)}
+			c_container.innerHTML = s_noCommentsText;
+		} else {print(comments)}
 	})
 }
 
