@@ -91,7 +91,7 @@ function getComments() {
 				console.log(comments[i]["Timestamp2"])
 
 				var comment_line = document.createElement("div");
-				comment_line.class = "comment_line"
+				comment_line.className = "comment_line"
 				document.getElementById("comments_list").appendChild(comment_line)
 				
 				var span1 = document.createElement("span")
@@ -100,6 +100,8 @@ function getComments() {
 				var span2 = document.createElement("span")
 				span2.appendChild(document.createTextNode(comments[i]["Text"]))
 
+				comment_line.appendChild(span1)
+				comment_line.appendChild(span2)
 				document.getElementById("comments_list").appendChild(comment_line)
 			}
 		}
