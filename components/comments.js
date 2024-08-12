@@ -85,7 +85,25 @@ function getComments() {
 
 		if (comments.length == 0 || Object.keys(comments[0]).length < 2) { // Once again, Google Sheets can be weird
 			c_container.innerHTML = s_noCommentsText;
-		} else {console.log(comments)}
+		} else {
+			for (i = 0; i < comments.length; i++) {
+				console.log(comments[i]["Text"])
+				console.log(comments[i]["Timestamp2"])
+
+				var comment_line = document.createElement("div");
+				comment_line.class = "comment_line"
+				document.getElementById("comments_list").appendChild(comment_line)
+				
+				var span1 = document.createElement("span")
+				span1.text = comments[i]["Timestamp2"]
+
+				var span2 = document.createElement("span")
+				span2.text = comments[i]["Text"]
+
+				comment_line.appendChild(span1)
+				comment_line.appendChild(span2)
+			}
+		}
 	})
 }
 
