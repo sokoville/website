@@ -3,7 +3,7 @@ const s_textId = '1007718193';
 const s_sheetId = '1TT3XDPxiuQzVrhKWI5Zqzf6rkQHrdxeXyZMfd-s_elU';
 
 const s_commentsPerPage = 8;
-const s_commentsOpen = true;
+var currentPage = 1;
 
 
 
@@ -111,7 +111,7 @@ function getComments(postSubmit) {
 		if (comments.length == 0 || Object.keys(comments[0]).length < 2) {
 			c_container.innerHTML = s_noCommentsText;
 		} else {
-			for (i = 0; i < comments.length; i++) {
+			for (i = ((currentPage * s_commentsPerPage) - 1); i < comments.length; i++) {
 				createComment("".concat(comments[i]["Timestamp2"].split(" ")[0], " - ", comments[i]["Timestamp2"].split(" ")[1]), comments[i]["Text"], comments[i]["Name"])
 			}
 
