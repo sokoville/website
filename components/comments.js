@@ -101,17 +101,18 @@ function getComments(postSubmit) {
 					comment[json.table.cols[c].label] = val2;
 				}
 				comment.Timestamp2 = json.table.rows[r].c[0].f;
-				comments.push(comment);
+				
+				if (comment["Page"] == location.pathname) {
+					comments.push(comment);
+				}
 			}
 		}
 
-		if (comments.length == 0 || Object.keys(comments[0]).length < 2) { // Once again, Google Sheets can be weird
+		if (comments.length == 0 || Object.keys(comments[0]).length < 2) {
 			c_container.innerHTML = s_noCommentsText;
 		} else {
 			for (i = 0; i < comments.length; i++) {
-				if (comments[i]["Page"] == location.pathname) {
-					createComment("".concat(comments[i]["Timestamp2"].split(" ")[0], " - ", comments[i]["Timestamp2"].split(" ")[1]), comments[i]["Text"], comments[i]["Name"])
-				}
+				createComment("".concat(comments[i]["Timestamp2"].split(" ")[0], " - ", comments[i]["Timestamp2"].split(" ")[1]), comments[i]["Text"], comments[i]["Name"])
 			}
 
 			if (postSubmit) {
@@ -127,5 +128,3 @@ function getComments(postSubmit) {
 
 
 getComments(false);
-
-//ADD RESETTING WHEN YOU PRESS SUBMIT THEN GETTING THE COMMENTS AGAIN OR APPENDING YOUR COMMENT TO THE END EITHER WAY
