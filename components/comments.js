@@ -110,7 +110,7 @@ function getComments(postSubmit) {
 		} else {
 			for (i = 0; i < comments.length; i++) {
 				if (comments[i]["Page"] == location.pathname) {
-					createComment("".concat(comments[i]["Timestamp2"].split(" ")[1], " - ", comments[i]["Timestamp2"].split(" ")[2]), comments[i]["Text"], comments[i]["Name"])
+					createComment("".concat(comments[i]["Timestamp2"].split(" ")[0], " - ", comments[i]["Timestamp2"].split(" ")[1]), comments[i]["Text"], comments[i]["Name"])
 				}
 			}
 
