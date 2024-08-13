@@ -2,7 +2,7 @@ const s_nameId = '1395261069';
 const s_textId = '1007718193';
 const s_sheetId = '1TT3XDPxiuQzVrhKWI5Zqzf6rkQHrdxeXyZMfd-s_elU';
 
-const s_commentsPerPage = 8;
+const s_commentsPerPage = 99;
 var currentPage = 1;
 
 
