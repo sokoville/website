@@ -101,10 +101,8 @@ function getComments(postSubmit) {
 					comment[json.table.cols[c].label] = val2;
 				}
 				comment.Timestamp2 = json.table.rows[r].c[0].f;
-				//console.log(comment["Page"]);
 				
 				if (comment["Page"] == location.pathname) {
-					console.log("Push")
 					comments.push(comment);
 				}
 			}
@@ -114,6 +112,7 @@ function getComments(postSubmit) {
 			c_container.innerHTML = s_noCommentsText;
 		} else {
 			for (i = ((currentPage * s_commentsPerPage) - 1); i < comments.length; i++) {
+				console.log("Create comment")
 				createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
 				//"".concat(comments[i]["Timestamp2"].split(" ")[0], " - ", comments[i]["Timestamp2"].split(" ")[1])
 			}
