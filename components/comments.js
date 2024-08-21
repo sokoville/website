@@ -116,7 +116,7 @@ function getComments(postSubmit) {
 
 			for (i = ((currentPage * s_commentsPerPage) - 1); i < comments.length; i++) {
 				console.log("Create comment")
-				createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
+				createComment("comments[i][]", comments[i]["Text"], comments[i]["Name"])
 				//"".concat(comments[i]["Timestamp2"].split(" ")[0], " - ", comments[i]["Timestamp2"].split(" ")[1])
 			}
 
