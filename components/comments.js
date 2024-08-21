@@ -31,6 +31,7 @@ class Comments extends HTMLElement {
 }
 
 customElements.define('comments-component', Comments);
+document.getElementById("comments_page_input").value = location.pathname
 
 function doSubmit() {
 	document.getElementById("comment").submit();
@@ -123,8 +124,6 @@ function getComments(postSubmit) {
 			document.getElementById("comment").reset();
 		}
 	})
-
-	document.getElementById("comments_page_input").value = location.pathname
 }
 
 
