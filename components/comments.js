@@ -101,6 +101,7 @@ function getComments(postSubmit) {
 					comment[json.table.cols[c].label] = val2;
 				}
 				comment.Timestamp2 = json.table.rows[r].c[0].f;
+				comment.Page = json.table.rows[r].c[3].f;
 				
 				if (comment["Page"] == location.pathname) {
 					comments.push(comment);
