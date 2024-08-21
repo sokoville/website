@@ -18,7 +18,7 @@ class Comments extends HTMLElement {
 				<div>
 					Comment:
 					<input id="comment_text" type="text" name="entry.1007718193" maxlength="140" minlength="3" value="" style="width: 40%" required>
-					<input id="comments_page_input" type="hidden" name="entry.1374517791" value="/">
+					<input class="page_input" type="hidden" name="entry.1374517791" value="/">
 					<input type="submit" value="Comment"><br>
 					<span style="font-size: .75em">(prefer English or Nederlands language)</span>
 				</div>
@@ -31,8 +31,6 @@ class Comments extends HTMLElement {
 }
 
 customElements.define('comments-component', Comments);
-//document.getElementById("comments_page_input").value = document.location.pathname
-console.log(location.pathname)
 
 function doSubmit() {
 	document.getElementById("comment").submit();
@@ -125,6 +123,8 @@ function getComments(postSubmit) {
 			document.getElementById("comment").reset();
 		}
 	})
+
+	document.getElementsByClassName("page_input").value = document.location.pathname
 }
 
 
