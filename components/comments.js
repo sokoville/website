@@ -112,7 +112,8 @@ function getComments(postSubmit) {
 			c_container.innerHTML = s_noCommentsText;
 		} else {
 			for (i = ((currentPage * s_commentsPerPage) - 1); i < comments.length; i++) {
-				createComment("".concat(comments[i]["Timestamp2"].split(" ")[0], " - ", comments[i]["Timestamp2"].split(" ")[1]), comments[i]["Text"], comments[i]["Name"])
+				createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
+				//"".concat(comments[i]["Timestamp2"].split(" ")[0], " - ", comments[i]["Timestamp2"].split(" ")[1])
 			}
 
 			if (postSubmit) {
