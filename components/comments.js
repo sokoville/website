@@ -108,9 +108,10 @@ function getComments(postSubmit) {
 			}
 		}
 
-		if (comments.length == 0 || Object.keys(comments[0]).length < 2) {
-			c_container.innerHTML = s_noCommentsText;
-		} else {
+		//if (comments.length == 0 || Object.keys(comments[0]).length < 2) {
+		//	console.log("c_container")
+		//	c_container.innerHTML = s_noCommentsText;
+		//} else {
 			for (i = ((currentPage * s_commentsPerPage) - 1); i < comments.length; i++) {
 				console.log("Create comment")
 				createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
@@ -122,7 +123,7 @@ function getComments(postSubmit) {
 			}
 
 			document.getElementById("comment").reset();
-		}
+		//}
 	})
 
 	document.getElementsByClassName("page_input").value = document.location.pathname
