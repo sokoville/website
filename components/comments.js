@@ -112,6 +112,8 @@ function getComments(postSubmit) {
 		//	console.log("c_container")
 		//	c_container.innerHTML = s_noCommentsText;
 		//} else {
+			console.log(comments)
+
 			for (i = ((currentPage * s_commentsPerPage) - 1); i < comments.length; i++) {
 				console.log("Create comment")
 				createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
