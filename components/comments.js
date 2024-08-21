@@ -108,15 +108,15 @@ function getComments(postSubmit) {
 			}
 		}
 
-		//if (comments.length == 0 || Object.keys(comments[0]).length < 2) {
-		//	console.log("c_container")
-		//	c_container.innerHTML = s_noCommentsText;
-		//} else {
+		if (comments.length == 0 || Object.keys(comments[0]).length < 2) {
+			console.log("c_container")
+			c_container.innerHTML = s_noCommentsText;
+		} else {
 			console.log(comments)
 
 			for (i = 0; i < comments.length; i++) {
 				console.log("Create comment")
-				createComment(comments[i]["Timestamp2"], comments[i]["Text"], comments[i]["Name"])
+				createComment("".concat(comments[i]["Timestamp2"].split(" ")[0], " - ", comments[i]["Timestamp2"].split(" ")[1]), comments[i]["Text"], comments[i]["Name"])
 				//"".concat(comments[i]["Timestamp2"].split(" ")[0], " - ", comments[i]["Timestamp2"].split(" ")[1])
 			}
 
@@ -125,7 +125,7 @@ function getComments(postSubmit) {
 			}
 
 			document.getElementById("comment").reset();
-		//}
+		}
 	})
 
 	document.getElementsByClassName("page_input").value = document.location.pathname
