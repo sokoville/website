@@ -27,15 +27,13 @@ class Comments extends HTMLElement {
 			<div id="comments_list" style="text-align: left;"></div>
 			<iframe id="hiddenIFrame" name="hiddenIFrame" style="display: none;"></iframe>
 		</div>
-
-		<script>
-			console.log(document.getElementsByClassName("page_input").value);
-			document.getElementsByClassName("page_input").value = document.location.pathname;
-		</script>
 	`;}
 }
 
 customElements.define('comments-component', Comments);
+
+console.log(document.getElementsByClassName("page_input").value);
+document.getElementsByClassName("page_input").value = document.location.pathname;
 
 function doSubmit() {
 	document.getElementById("comment").submit();
@@ -133,6 +131,5 @@ function getComments(postSubmit) {
 		}
 	})
 }
-
 
 getComments(false);
