@@ -18,7 +18,7 @@ class Comments extends HTMLElement {
 				<div>
 					Comment:
 					<input id="comment_text" type="text" name="entry.1007718193" maxlength="140" minlength="3" value="" style="width: 40%" required>
-					<input class="page_input" type="hidden" name="entry.1374517791" value="">
+					<input class="page_input" type="text" name="entry.1374517791" value="" style="size: 0px;">
 					<input type="submit" value="Comment"><br>
 					<span style="font-size: .75em">(prefer English or Nederlands language)</span>
 				</div>
