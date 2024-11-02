@@ -5,8 +5,6 @@ const s_sheetId = '1TT3XDPxiuQzVrhKWI5Zqzf6rkQHrdxeXyZMfd-s_elU';
 const s_commentsPerPage = 99;
 var currentPage = 1;
 
-
-
 class Comments extends HTMLElement {
 	constructor() {
 	  super();
@@ -36,8 +34,8 @@ class Comments extends HTMLElement {
 
 customElements.define('comments-component', Comments);
 
-console.log(document.getElementById("page_input").value);
-document.getElementsByClassName("page_input").value = document.location.pathname;
+
+//document.getElementsByClassName("page_input").value = document.location.pathname;
 
 function doSubmit() {
 	document.getElementById("comment").submit();
