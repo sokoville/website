@@ -25,6 +25,11 @@ class Comments extends HTMLElement {
 			<div id="comments_list" style="text-align: left;"></div>
 			<iframe id="hiddenIFrame" name="hiddenIFrame" style="display: none;"></iframe>
 		</div>
+
+		<script>
+			document.getElementById("page_input").value = document.location.pathname;
+			console.log(document.getElementById("page_input").value);
+		</script>
 	`;}
 }
 
@@ -126,9 +131,6 @@ function getComments(postSubmit) {
 			document.getElementById("comment").reset();
 		}
 	})
-
-	document.getElementById("page_input").value = document.location.pathname;
-	console.log(document.getElementById("page_input").value);
 }
 
 getComments(false);
