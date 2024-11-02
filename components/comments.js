@@ -29,6 +29,7 @@ class Comments extends HTMLElement {
 		<script>
 			document.getElementById("page_input").value = document.location.pathname;
 			console.log(document.getElementById("page_input").value);
+			console.log(document.location.pathname);
 		</script>
 	`;}
 }
