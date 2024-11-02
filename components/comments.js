@@ -36,7 +36,7 @@ class Comments extends HTMLElement {
 
 customElements.define('comments-component', Comments);
 
-console.log(document.getElementsByClassName("page_input").value);
+console.log(document.getElementById("page_input").value);
 document.getElementsByClassName("page_input").value = document.location.pathname;
 
 function doSubmit() {
