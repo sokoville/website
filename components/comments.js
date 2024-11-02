@@ -25,10 +25,6 @@ class Comments extends HTMLElement {
 			<div id="comments_list" style="text-align: left;"></div>
 			<iframe id="hiddenIFrame" name="hiddenIFrame" style="display: none;"></iframe>
 		</div>
-
-		<script>
-			document.comment["entry.1374517791"].value = document.location.pathname;
-		</script>
 	`;}
 }
 
@@ -132,4 +128,9 @@ function getComments(postSubmit) {
 	})
 }
 
+function setValue() {
+	document.comment["entry.1374517791"].value = document.location.pathname;
+}
+
+setValue;
 getComments(false);
