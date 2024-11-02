@@ -18,6 +18,11 @@
 				<h1>Welcome to <a href="me.html">my</a> webpage.</h1>
 				
 				<comments-component></comments-component>
+				<script>
+					document.getElementById("page_input").value = document.location.pathname;
+					console.log(document.getElementById("page_input").value);
+					console.log(document.location.pathname);
+				</script>
 			</div>
 			
 			<footer-component></footer-component>
