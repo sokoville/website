@@ -7,7 +7,7 @@ class MagazineSort extends HTMLElement {
 		this.innerHTML = `
 		  <div id="langselect">
 		  	  <li onclick="togglelang('alle')"><a href="?l=all">all</a></li> | 
-			  <li onclick="togglelang('1930s')"><a href="?l=1930s">1930s</a></li> | 
+			  <li onclick="togglelang('thirties')"><a href="?l=thirties">1930s</a></li> | 
 		  </div>
 	  `;
 	}
