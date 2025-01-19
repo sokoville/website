@@ -1,6 +1,18 @@
 <html>
+	<script src="components/magazinesorting.js"></script>
+	<style>
+		.all, .thirties { display:none; } /* hide all elements with a language class */
+		.all:lang(all), .thirties:lang(1930s) { display:block; } /* show those elements that match their language class */
+	</style>
+
 	<div>
-		<span>10 Story Book Volume 33 Number 01 (July 1934)</span>
-		<span>10 Story Book Volume 37 Number 03 (August 1938)</span>
+		<div class="1930s" class="all">10 Story Book Volume 33 Number 01 (July 1934)</div>
+		<div class="1930s" class="all">10 Story Book Volume 37 Number 03 (August 1938)</div>
+		<div class="all">Fetter Volume 01 Number 01</div>
+		<div class="all">Fetter Volume 01 Number 03</div>
+		<div class="all">Fetter Volume 02 Number 02</div>
+		<div class="all">Fetter Volume 04 Number 02</div>
 	</div>
+
+	<lang-select-component></lang-select-component>
 </html>
