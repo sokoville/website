@@ -27,5 +27,5 @@ class MagazineSort extends HTMLElement {
 	  document.documentElement.setAttribute("lang", language);
   }
   
-  customElements.define('lang-select-component', LangSelect);
+  customElements.define('lang-select-component', MagazineSort);
   
