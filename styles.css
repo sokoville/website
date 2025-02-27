@@ -19,18 +19,31 @@ footer {
 	height: calc(3.65em + 31px); 
 }
 
+hr {
+	color: palegoldenrod;
+	border-width: 2px;
+	border-style: inset;
+}
+
 .centered {
 	text-align: center;
 }
 
 .content {
 	padding-bottom: calc(4em + 31px);
+	padding-left: 95px;
+	padding-right: 95px;
 }
 
 .bordered {
 	border-width: 3px; 
 	border-color: palegoldenrod;
 	border-style: ridge;
+}
+
+.h1p {
+	font-size: 2.75em; 
+	margin: 0em;
 }
 
 #page_container {
