@@ -19,6 +19,7 @@ class Footer extends HTMLElement {
 			<a href="https://youtu.be/EDsc5A1LQMs?si=TyDRH-74LRuM67d_" title="counter strike source: a beautiful creation"><img src="badges/cs.gif" alt="counter strike source"></a>
 			<img src="badges/fingerofgod.gif">
 			<a href="https://www.youtube.com/watch?v=S5L3tESenlU" title="põgene vaba laps"><img src="badges/howtobecomeanangel.gif"></a>
+			<img src="badges/mousepow.gif">
 		</footer>
 	`;}
 }

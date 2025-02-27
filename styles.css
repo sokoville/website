@@ -19,8 +19,18 @@ footer {
 	height: calc(3em + 31px); 
 }
 
+.centered {
+	text-align: center;
+}
+
 .content {
 	padding-bottom: calc(4em + 31px);
+}
+
+.bordered {
+	border-width: 3px; 
+	border-color: palegoldenrod;
+	border-style: ridge;
 }
 
 #page_container {
