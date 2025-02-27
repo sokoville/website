@@ -36,22 +36,22 @@ footer {
 }
 
 #navbar img {
-	width: 50px;
-	padding: 10px;
+	width: 45px;
+	padding: 6px;
 	border-style: ridge;
 	border-width: 3px;
 	margin-top: 10px;
 }
 
 #navbar img:hover {
-	width: 45px;
+	width: 40px;
 	margin: 2.5px;
 	margin-top: 12.5px;
 }
 
 #navbar_home {
-	border-color: red;
-	background-color: yellow;
+	border-color: palegoldenrod;
+	background-color: darkgreen;
 }
 
 #navbar_links {
