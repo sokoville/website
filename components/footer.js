@@ -20,6 +20,8 @@ class Footer extends HTMLElement {
 			<img src="badges/fingerofgod.gif">
 			<a href="https://www.youtube.com/watch?v=S5L3tESenlU" title="põgene vaba laps"><img src="badges/howtobecomeanangel.gif"></a>
 			<img src="badges/mousepow.gif">
+			<br>
+			<small>last updated: 27.02.2025</small>
 		</footer>
 	`;}
 }

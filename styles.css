@@ -16,7 +16,7 @@ footer {
 	text-align: center; 
 	width: 90%; 
 	left: 5%; 
-	height: calc(3em + 31px); 
+	height: calc(3.65em + 31px); 
 }
 
 .centered {
@@ -46,7 +46,7 @@ footer {
 }
 
 #navbar img {
-	width: 45px;
+	width: 42px;
 	padding: 6px;
 	border-style: ridge;
 	border-width: 3px;
@@ -54,7 +54,7 @@ footer {
 }
 
 #navbar img:hover {
-	width: 40px;
+	width: 37px;
 	margin: 2.5px;
 	margin-top: 12.5px;
 }
