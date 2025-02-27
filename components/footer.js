@@ -9,7 +9,7 @@ class Footer extends HTMLElement {
 			<a href="https://www.nytimes.com/subscription/redeem?campaignId=8WH8J&gift_code=0412a4eca912f48f">free nyt trial</a>
 			<br><br>
 			<a href="https://www.twitter.com/kafkaesquetwink" title="twitter is a terrible place but a place i inhabit"><img src="badges/twitter.gif" alt="twitter"></a>
-			<a href="https://discord.gg/jARfRWxm" title="ugh"><img src="badges/discord.gif" alt="discord server"></a>
+			<!--<a href="https://discord.gg/" title="ugh"><img src="badges/discord.gif" alt="discord server"></a>-->
 			<a href="https://steamcommunity.com/profiles/76561198852125837/" title="come play counter strike with me"><img src="badges/playwithsteam.jpg" alt="profile steam"></a>
 			<img src="badges/anybrowse.gif" title="optimized for no one">
 			<img src="badges/antinft.gif" alt="fuck nfts" title="seriously fuck nfts">
