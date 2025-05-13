@@ -13,4 +13,6 @@ class NavBar extends HTMLElement {
 	`;}
 }
 
-customElements.define('navbar-component', NavBar);
+if (screen.orientation.type == "landscape-primary") {
+	customElements.define('navbar-component', NavBar);
+}
