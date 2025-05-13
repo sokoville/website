@@ -1,6 +1,10 @@
 @font-face {
 	font-family: Garamond;
+<<<<<<< HEAD
 	src: url("fonts/EBGaramond-VariableFont_wght.ttf");
+=======
+	src: url(fonts/EBGaramond-VariableFont_wght.ttf);
+>>>>>>> ef2fc4d40effe4e05dcc1c535db6db361796f59b
 }
 
 body {
@@ -8,11 +12,11 @@ body {
 	color: #252525;
 	text-align: left;
 	margin: 0px;
+	font-family: Garamond;
 }
 
 a {
 	color: green;
-	font-weight: lighter;
 }
 
 footer {
@@ -21,7 +25,7 @@ footer {
 	text-align: center; 
 	width: 90%; 
 	left: 5%; 
-	height: calc(3.65em + 31px); 
+	height: calc(3.65em + 26px); 
 }
 
 hr {
@@ -35,9 +39,8 @@ hr {
 }
 
 .content {
-	padding-bottom: calc(4em + 31px);
-	padding-left: 95px;
-	padding-right: 95px;
+	padding-bottom: calc(4em + 30px);
+	padding-left: 96px;
 }
 
 .bordered {
@@ -46,9 +49,8 @@ hr {
 	border-style: ridge;
 }
 
-.h1p {
-	font-size: 2.75em; 
-	margin: 0em;
+.supertitle {
+	font-size: 4.5rem; 
 }
 
 #page_container {
@@ -60,7 +62,7 @@ hr {
 	float: left;
 	position: absolute;
 	margin-left: 15px;
-	margin-top: 12px;
+	margin-top: 8px;
 }
 
 #navbar img {
