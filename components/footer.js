@@ -5,7 +5,7 @@ class Footer extends HTMLElement {
   
 	connectedCallback() { this.innerHTML = `
 		<footer>
-			<a href="https://letterboxd.com/kafkaesquetwink/">letterboxd</a> | 
+			<a href="https://letterboxd.com/iminthecut/">letterboxd</a> | 
 			<a href="https://www.nytimes.com/subscription/redeem?campaignId=8WH8J&gift_code=0412a4eca912f48f">free nyt trial</a>
 			<br><small>last updated: 13.05.2025 (ver3)</small><br>
 			<a href="https://www.twitter.com/whenitstops" title="twitter is a terrible realm i inhabit"><img src="badges/twitter.gif" alt="twitter"></a>
