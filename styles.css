@@ -85,8 +85,8 @@ hr {
 	border-color: #86a1be;
 }
 
-
-
+.en, .it, .ru { display:none; }
+.en:lang(en), .it:lang(it), .ru:lang(ru) { display:block; }
 
 
 
