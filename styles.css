@@ -3,16 +3,13 @@
 	src: url("fonts/EBGaramond-VariableFont_wght.ttf") format("truetype");
 }
 
-body {
-	background-color: cornsilk;
-	color: #252525;
-	text-align: left;
-	margin: 0px;
-	font-family: "Garamond";
+@font-face {
+	font-family: "Arimo";
+	src: url("fonts/Arimo-VariableFont_wght.ttf") format("truetype")
 }
 
-a {
-	color: green;
+body {
+	margin: 0px;
 }
 
 footer {
@@ -24,7 +21,27 @@ footer {
 	height: calc(3.65em + 26px); 
 }
 
-hr {
+.zinloos .article-title{
+	font-size: 2rem;
+	font-family: Garamond;
+	padding-right: 6rem;
+}
+
+.zinloos .article-stub{
+	padding-right: 1rem;
+}
+
+.deadworld-body {
+	background-color: cornsilk;
+	text-align: left;
+	font-family: "Garamond";
+}
+
+.deadworld-body a {
+	color: green;
+}
+
+.deadworld-body hr {
 	color: palegoldenrod;
 	border-width: 2px;
 	border-style: inset;
@@ -34,7 +51,7 @@ hr {
 	text-align: center;
 }
 
-.content {
+.deadworld-body .content {
 	padding-bottom: calc(4em + 30px);
 	padding-left: 24px;
 }
