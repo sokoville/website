@@ -5,7 +5,6 @@ class Footer extends HTMLElement {
   
 	connectedCallback() { this.innerHTML = `
 		<footer>
-			<a href="https://www.nytimes.com/subscription/redeem?campaignId=8WH8J&gift_code=0412a4eca912f48f">free nyt trial</a>
 			<br><small>last updated: 16.05.2025 (ver3)</small><br>
 			<a href="https://www.twitter.com/whenitstops"><img src="badges/twitter.gif" alt="twitter"></a>
 			<!--<a href="https://discord.gg/"><img src="badges/discord.gif" alt="discord server"></a>-->
