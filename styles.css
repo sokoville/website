@@ -47,13 +47,26 @@ footer {
 	border-style: inset;
 }
 
-.centered {
-	text-align: center;
-}
-
 .deadworld-body .content {
 	padding-bottom: calc(4em + 30px);
 	padding-left: 24px;
+}
+
+.catalogue-body {
+    text-align: left;
+}
+
+.catalogue-body .content {
+	padding-bottom: calc(4em + 30px);
+	padding-left: 24px;
+}
+
+.catalogue-body a {
+	text-decoration: none;
+}
+
+.centered {
+	text-align: center;
 }
 
 .bordered {
