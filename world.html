@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Upload File</h2>
+
+<input type="file" id="fileInput">
+<button id="uploadBtn">Upload</button>
+
+<p id="status"></p>
+
+<script>
+const workerUrl =
+  "https://github-upload.matthewbogen06.workers.dev/";
+
+document
+.getElementById("uploadBtn")
+.addEventListener("click", async () => {
+
+  const file =
+    document.getElementById("fileInput").files[0];
+
+  if (!file) {
+    alert("Choose a file");
+    return;
+  }
+
+  const formData = new FormData();
+
+  formData.append("file", file);
+
+  document.getElementById("status")
+    .innerText = "Uploading...";
+
+  const response = await fetch(workerUrl, {
+    method: "POST",
+    body: formData
+  });
+
+  const result = await response.json();
+
+  if (result.success) {
+    document.getElementById("status")
+      .innerText = "Upload successful!";
+  } else {
+    document.getElementById("status")
+      .innerText = "Upload failed";
+  }
+});
+</script>
+
+</body>
+</html>
