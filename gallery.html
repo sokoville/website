@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0e0e;
+    --surface: #181818;
+    --border: #2a2a2a;
+    --text: #e8e2d9;
+    --muted: #5a5550;
+    --accent: #c8a96e;
+    --cols: 3;
+    --gap: 12px;
+    --batch: 9;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 48px 40px 32px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+  }
+
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+
+  #count {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  #grid {
+    display: grid;
+    grid-template-columns: repeat(var(--cols), 1fr);
+    gap: var(--gap);
+    padding: var(--gap);
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    aspect-ratio: 1;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+  }
+
+  .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, filter 0.4s ease;
+    filter: brightness(0.92);
+  }
+
+  .card:hover img {
+    transform: scale(1.04);
+    filter: brightness(1);
+  }
+
+  .card .label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 10px;
+    font-size: 0.62rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card:hover .label { opacity: 1; }
+
+  /* skeleton shimmer */
+  .card.skeleton {
+    background: var(--surface);
+    opacity: 1;
+    transform: none;
+  }
+  .card.skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+      transparent 0%, rgba(255,255,255,0.04) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+  }
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position:  200% 0; }
+  }
+
+  /* sentinel / loader */
+  #sentinel {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  #end-msg {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* lightbox */
+  #lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    cursor: zoom-out;
+  }
+  #lightbox.open { display: flex; }
+
+  #lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 80px rgba(0,0,0,0.8);
+  }
+
+  #lb-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 1.4rem;
+    color: var(--muted);
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  #lb-close:hover { color: var(--text); }
+
+  #lb-label {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 700px) {
+    :root { --cols: 2; }
+    header { padding: 28px 16px 20px; }
+    #grid { padding: var(--gap); }
+  }
+  @media (max-width: 420px) {
+    :root { --cols: 1; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Uploads</h1>
+  <span id="count"></span>
+</header>
+
+<div id="grid"></div>
+<div id="sentinel"><div class="spinner" id="spinner"></div></div>
+<div id="end-msg">— end of gallery —</div>
+
+<div id="lightbox">
+  <button id="lb-close" aria-label="Close">✕</button>
+  <img id="lb-img" src="" alt="">
+  <span id="lb-label"></span>
+</div>
+
+<script>
+  // ─── CONFIG ──────────────────────────────────────────────────────────────────
+  const GITHUB_OWNER = "YOUR_GITHUB_OWNER";   // e.g. "acme-corp"
+  const GITHUB_REPO  = "YOUR_GITHUB_REPO";    // e.g. "my-repo"
+  const BRANCH       = "main";                // branch where uploads live
+  const BATCH_SIZE   = 9;                     // images per scroll load
+  // ─────────────────────────────────────────────────────────────────────────────
+
+  const RAW_BASE =
+    `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${BRANCH}/uploads/`;
+
+  const grid     = document.getElementById("grid");
+  const spinner  = document.getElementById("spinner");
+  const endMsg   = document.getElementById("end-msg");
+  const countEl  = document.getElementById("count");
+
+  let allFiles   = [];   // sorted high → low
+  let cursor     = 0;    // next index to render
+  let loading    = false;
+  let done       = false;
+
+  // ── 1. Fetch the full file list from GitHub ──────────────────────────────────
+  async function fetchFileList() {
+    const url =
+      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}` +
+      `/contents/uploads?ref=${BRANCH}`;
+
+    const res = await fetch(url, {
+      headers: { "Accept": "application/vnd.github+json" }
+    });
+
+    if (!res.ok) {
+      // Folder may not exist yet
+      if (res.status === 404) return [];
+      throw new Error(`GitHub API error ${res.status}`);
+    }
+
+    const entries = await res.json();
+
+    // Keep only files whose names start with a number
+    const numeric = entries
+      .filter(e => e.type === "file" && /^\d+\./i.test(e.name));
+
+    // Sort descending by number so newest (highest) appear first
+    numeric.sort((a, b) => {
+      const na = parseInt(a.name, 10);
+      const nb = parseInt(b.name, 10);
+      return nb - na;
+    });
+
+    return numeric;
+  }
+
+  // ── 2. Render the next batch ─────────────────────────────────────────────────
+  function renderBatch() {
+    if (loading || done) return;
+    loading = true;
+
+    const batch = allFiles.slice(cursor, cursor + BATCH_SIZE);
+    cursor += batch.length;
+
+    if (batch.length === 0) {
+      finishGallery();
+      return;
+    }
+
+    // Show skeleton cards while images load
+    const cards = batch.map(file => {
+      const card = document.createElement("div");
+      card.className = "card skeleton";
+      card.dataset.src = RAW_BASE + file.name;
+      card.dataset.name = file.name;
+      grid.appendChild(card);
+      return card;
+    });
+
+    // Load images, replace skeleton when ready
+    let settled = 0;
+    cards.forEach((card, i) => {
+      const img = new Image();
+      img.onload = img.onerror = () => {
+        card.classList.remove("skeleton");
+
+        if (img.complete && img.naturalWidth > 0) {
+          card.appendChild(img);
+          const lbl = document.createElement("span");
+          lbl.className = "label";
+          lbl.textContent = card.dataset.name;
+          card.appendChild(lbl);
+
+          card.addEventListener("click", () => openLightbox(card.dataset.src, card.dataset.name));
+        } else {
+          // broken image placeholder
+          card.style.display = "flex";
+          card.style.alignItems = "center";
+          card.style.justifyContent = "center";
+          const txt = document.createElement("span");
+          txt.style.cssText = "font-size:0.6rem;color:#5a5550;letter-spacing:0.1em;";
+          txt.textContent = card.dataset.name;
+          card.appendChild(txt);
+        }
+
+        // Stagger the fade-in
+        setTimeout(() => card.classList.add("visible"), i * 55);
+
+        if (++settled === cards.length) {
+          loading = false;
+          if (cursor >= allFiles.length) finishGallery();
+        }
+      };
+      img.src = card.dataset.src;
+      img.alt = card.dataset.name;
+    });
+  }
+
+  function finishGallery() {
+    done = true;
+    spinner.style.display = "none";
+    endMsg.style.display = "block";
+  }
+
+  // ── 3. IntersectionObserver for infinite scroll ──────────────────────────────
+  const sentinel = document.getElementById("sentinel");
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) renderBatch();
+  }, { rootMargin: "200px" });
+
+  // ── 4. Lightbox ──────────────────────────────────────────────────────────────
+  const lightbox = document.getElementById("lightbox");
+  const lbImg    = document.getElementById("lb-img");
+  const lbLabel  = document.getElementById("lb-label");
+
+  function openLightbox(src, name) {
+    lbImg.src = src;
+    lbLabel.textContent = name;
+    lightbox.classList.add("open");
+  }
+
+  document.getElementById("lb-close").addEventListener("click", () => lightbox.classList.remove("open"));
+  lightbox.addEventListener("click", e => { if (e.target === lightbox) lightbox.classList.remove("open"); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") lightbox.classList.remove("open"); });
+
+  // ── 5. Init ──────────────────────────────────────────────────────────────────
+  (async () => {
+    try {
+      allFiles = await fetchFileList();
+      countEl.textContent = `${allFiles.length} image${allFiles.length !== 1 ? "s" : ""}`;
+
+      if (allFiles.length === 0) {
+        finishGallery();
+        endMsg.textContent = "— no images yet —";
+        return;
+      }
+
+      observer.observe(sentinel);
+      renderBatch(); // kick off first batch immediately
+    } catch (err) {
+      spinner.style.display = "none";
+      endMsg.style.display = "block";
+      endMsg.textContent = `— failed to load: ${err.message} —`;
+    }
+  })();
+</script>
+</body>
+</html>
