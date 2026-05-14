@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>deadworldonline</title>
 		<link rel="stylesheet" href="styles.css">
-		<script src="components/footer.js"></script>
-		<script src="components/navbar.js"></script>
-		<script src="components/language.js"></script>
+        <script src="components/footer.js" defer></script>
+		<script src="components/navbar.js" defer></script>
+		<script src="components/language.js" defer></script>
 	</head>
 	<body class="deadworld-body">
 		<div id="page_container">
 			<!--<navbar-component></navbar-component>-->
 
-			<div class="content">
+			<main class="content">
 				<div class="supertitle" style="max-width: calc(84vw);">
 					Welcome to <a href="me.html">my</a> webpage. I don't have much here for now. I am just a boy against the big scary lizard monster...
-					<div style="font-size: 0.6em; margin-top: 16px; white-space: pre-wrap; font-weight: 600;"><a href="https://twitter.com/whenitstops/">twitter page.</a>   <a href="https://letterboxd.com/iminthecut/">letterboxd.</a>   <a href="https://steamcommunity.com/profiles/76561198852125837/">steam profile.</a>   discord. @iminthecut</div>
+					<span style="font-size: 0.6em; margin-top: 16px; white-space: pre-wrap; font-weight: 600;"><a href="https://twitter.com/whenitstops/">twitter page.</a>   <a href="https://letterboxd.com/iminthecut/">letterboxd.</a>   <a href="https://steamcommunity.com/profiles/76561198852125837/">steam profile.</a>   discord. @iminthecut</span>
 				</div>
 
-				<div style="height:calc(60vh + 2.5em); float: right; margin-right: 11.5vw;">
+				<!--<div style="height:calc(60vh + 2.5em); float: right; margin-right: 11.5vw;">
 					<img src="images/st george.jpg" class="bordered" style="height:60vh;"></img><br>
 					<div class="en">Gustave Moreau, <i>St. George and the Dragon (1889)</i></div>
 					<div class="it">Gustave Moreau, <i>San Giorgio e il drago (1889)</i></div>
-				</div>
+				</div>-->
+
+                <figure class="st-george" style="height: calc(60vh + 2.5em); float: right; margin-right: 11.5vw;">
+					<img src="images/st george.jpg" class="bordered" style="height: 60vh;" alt="Gustave Moreau, St. George and the Dragon (1889)">
+					<figcaption class="en">Gustave Moreau, <i>St. George and the Dragon (1889)</i></figcaption>
+					<figcaption class="it">Gustave Moreau, <i>San Giorgio e il drago (1889)</i></figcaption>
+				</figure>
+
 
 				<p style="font-size: 1.5rem"><strong>Oh, the Pages you can See!</strong></p>
 				<p style="font-size: 1.5rem"><small>▻ </small><a href="zinloos.html"><strong>writing.</strong></a></p>
