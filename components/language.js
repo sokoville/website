@@ -44,7 +44,7 @@ class Dutch extends HTMLElement {
 	}
   
 	connectedCallback() {
-		this.innerHTML = `<span id="langselect" onclick="togglelang('nl')"><a href="?l=nl">Dutch</a></span>`;
+		this.innerHTML = `<span id="langselect" onclick="togglelang('nl')"><a href="?l=nl">Nederlands</a></span>`;
 	}
 }
 

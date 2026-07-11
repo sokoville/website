@@ -2,15 +2,6 @@ body {
 	margin: 0px;
 }
 
-footer {
-	position: absolute; 
-	bottom: 0em; 
-	text-align: center; 
-	width: 90%; 
-	left: 5%; 
-	height: calc(3.65em + 26px); 
-}
-
 .zinloos .article-title{
 	font-size: 2rem;
 	font-family: Garamond;
@@ -62,6 +53,11 @@ footer {
 .supertitle {
 	font-size: 4.5rem; 
 }
+
+
+
+
+
 
 #navbar {
 	float: left;
