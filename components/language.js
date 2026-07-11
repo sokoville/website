@@ -1,30 +1,47 @@
-class Language extends HTMLElement {
+class English extends HTMLElement {
 	constructor() {
-	  super();
+	    super();
 	}
   
 	connectedCallback() {
-		this.innerHTML = `
-		  <div id="langselect">
-			  <li onclick="togglelang('en')"><a href="?l=en">English</a></li> 
-			  <li onclick="togglelang('it')"><a href="?l=it">Italiano</a></li> 
-		  </div>
-	  `;
+		this.innerHTML = `<span id="langselect" onclick="togglelang('en')"><a href="?l=en">English</a></span>`;
 	}
-  }
+}
   
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const lang = urlParams.get('l')
+class Italian extends HTMLElement {
+	constructor() {
+	    super();
+	}
   
-  if (lang) {
-	  document.documentElement.setAttribute("lang", lang);
-  } else {
-	  document.documentElement.setAttribute("lang", "en");
-  }
+	connectedCallback() {
+		this.innerHTML = `<span id="langselect" onclick="togglelang('it')"><a href="?l=it">Italiano</a></span>`;
+	}
+}
+
+class German extends HTMLElement {
+	constructor() {
+	    super();
+	}
   
-  function togglelang(language) {
-	  document.documentElement.setAttribute("lang", language);
-  }
+	connectedCallback() {
+		this.innerHTML = `<span id="langselect" onclick="togglelang('de')"><a href="?l=de">Deutsch</a></span>`;
+	}
+}
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const lang = urlParams.get('l')
   
-  customElements.define('language-component', Language);
+if (lang) {
+	document.documentElement.setAttribute("lang", lang);
+} else {
+	document.documentElement.setAttribute("lang", "en");
+}
+  
+function togglelang(language) {
+	document.documentElement.setAttribute("lang", language);
+}
+  
+customElements.define('english-language', English);
+customElements.define('italian-language', Italian);
+customElements.define('german-language', German);

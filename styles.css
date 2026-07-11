@@ -25,3 +25,6 @@ h1 {
         margin: 0.25em 0.2em 0em 0.2em;
     }
 }
+
+.en, .it, .de, .ru { display:none; }
+.en:lang(en), .it:lang(it), .de:lang(de), .ru:lang(ru) { display:block; }
