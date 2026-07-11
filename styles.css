@@ -7,3 +7,11 @@
 	font-family: "Arimo";
 	src: url("fonts/Arimo-VariableFont_wght.ttf") format("truetype")
 }
+
+h1 {
+    font-family: "Arial", sans-serif;
+}
+
+#page_container {
+	margin: 0.25em 1.6em 0em 1.6em;
+}

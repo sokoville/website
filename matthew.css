@@ -69,11 +69,6 @@ footer {
 	font-size: 4.5rem; 
 }
 
-#page_container {
-	min-height: 100vh;
-	position: relative;
-}
-
 #navbar {
 	float: left;
 	position: absolute;
