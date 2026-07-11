@@ -1,0 +1,145 @@
+body {
+	margin: 0px;
+}
+
+footer {
+	position: absolute; 
+	bottom: 0em; 
+	text-align: center; 
+	width: 90%; 
+	left: 5%; 
+	height: calc(3.65em + 26px); 
+}
+
+.zinloos .article-title{
+	font-size: 2rem;
+	font-family: Garamond;
+	padding-right: 6rem;
+}
+
+.zinloos .article-stub{
+	padding-right: 1rem;
+}
+
+.deadworld-body {
+	background-color: cornsilk;
+	text-align: left;
+	font-family: "Garamond";
+}
+
+.deadworld-body a {
+	color: green;
+}
+
+.deadworld-body hr {
+	color: palegoldenrod;
+	border-width: 2px;
+	border-style: inset;
+}
+
+.deadworld-body .content {
+	padding-bottom: calc(4em + 30px);
+	padding-left: 24px;
+}
+
+.catalogue-body {
+    text-align: left;
+}
+
+.catalogue-body .content {
+	padding-bottom: calc(4em + 30px);
+	padding-left: 24px;
+}
+
+.catalogue-body a {
+	text-decoration: none;
+}
+
+.centered {
+	text-align: center;
+}
+
+.bordered {
+	border-width: 3px; 
+	border-color: palegoldenrod;
+	border-style: ridge;
+}
+
+.supertitle {
+	font-size: 4.5rem; 
+}
+
+#page_container {
+	min-height: 100vh;
+	position: relative;
+}
+
+#navbar {
+	float: left;
+	position: absolute;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+#navbar img {
+	width: 42px;
+	padding: 6px;
+	border-style: ridge;
+	border-width: 3px;
+	margin-top: 10px;
+}
+
+#navbar img:hover {
+	width: 37px;
+	margin: 2.5px;
+	margin-top: 12.5px;
+}
+
+#navbar_home {
+	border-color: palegoldenrod;
+	background-color: darkgreen;
+}
+
+#navbar_links {
+	background-color: rgb(218, 218, 219); 
+	border-color: #86a1be;
+}
+
+.en, .it, .ru { display:none; }
+.en:lang(en), .it:lang(it), .ru:lang(ru) { display:block; }
+
+
+
+
+
+
+
+#music_player {
+	position: absolute; 
+	z-index: 90; 
+	border: 2px ridge #90a7d8;
+	background-color: #d7def3;
+}
+
+#music_player_title_bar {
+	background-color: #4f60a2;
+	padding-left: 1ex;
+	padding-right: 10rem;
+	padding-top: 1px;
+	padding-bottom: 3px;
+	cursor: move; 
+	z-index: 91;
+	text-align: left;
+}
+
+
+#music_player img {
+	padding-top: .3rem;
+	padding-bottom: .1rem;
+}
+
+#music_player img:hover {
+	width: 38px;
+	margin-top: 1px;
+	cursor: pointer;
+}
