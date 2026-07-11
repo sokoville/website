@@ -38,6 +38,16 @@ class Latin extends HTMLElement {
 	}
 }
 
+class Dutch extends HTMLElement {
+	constructor() {
+	    super();
+	}
+  
+	connectedCallback() {
+		this.innerHTML = `<span id="langselect" onclick="togglelang('nl')"><a href="?l=nl">Dutch</a></span>`;
+	}
+}
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const lang = urlParams.get('l')
@@ -52,7 +62,8 @@ function togglelang(language) {
 	document.documentElement.setAttribute("lang", language);
 }
   
-customElements.define('english-language', English);
-customElements.define('italian-language', Italian);
-customElements.define('german-language', German);
-customElements.define('latin-language', Latin);
+customElements.define('english-lang', English);
+customElements.define('italian-lang', Italian);
+customElements.define('german-lang', German);
+customElements.define('dutch-lang', Dutch);
+customElements.define('latin-lang', Latin);

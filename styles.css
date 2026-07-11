@@ -12,6 +12,10 @@ h1 {
     font-family: "Arimo", sans-serif;
 }
 
+h2 {
+    font-family: "Arimo", sans-serif;
+}
+
 #page_container {
 	margin: 0.25em 1.6em 0em 1.6em;
 }
@@ -26,5 +30,5 @@ h1 {
     }
 }
 
-.en, .it, .de, .la { display:none; }
-.en:lang(en), .it:lang(it), .de:lang(de), .la:lang(la) { display:block; }
+.en, .it, .de, .la, .nl { display:none; }
+.en:lang(en), .it:lang(it), .de:lang(de), .la:lang(la), .nl:lang(nl) { display:block; }
