@@ -20,6 +20,36 @@ h2 {
 	margin: 0.25em 1.6em 0em 1.6em;
 }
 
+.fake_link {
+    color: blue; 
+    text-decoration: underline; 
+    cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.view_more:not(:checked) ~ label,
+.view_more:checked ~ .hidden {
+    display: block;
+}
+
+.view_more,
+.view_more:checked ~ label {
+    display: none;
+}
+
+.view_more_it:not(:checked) ~ label,
+.view_more_it:checked ~ .hidden {
+    display: block;
+}
+
+.view_more_it,
+.view_more_it:checked ~ label {
+    display: none;
+}
+
 @media only screen and (max-width: 1000px) {
     h1 {
         text-align: center;
