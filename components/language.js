@@ -28,6 +28,16 @@ class German extends HTMLElement {
 	}
 }
 
+class Latin extends HTMLElement {
+	constructor() {
+	    super();
+	}
+  
+	connectedCallback() {
+		this.innerHTML = `<span id="langselect" onclick="togglelang('la')"><a href="?l=la">Latin</a></span>`;
+	}
+}
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const lang = urlParams.get('l')
@@ -45,3 +55,4 @@ function togglelang(language) {
 customElements.define('english-language', English);
 customElements.define('italian-language', Italian);
 customElements.define('german-language', German);
+customElements.define('latin-language', Latin);

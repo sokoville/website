@@ -26,5 +26,5 @@ h1 {
     }
 }
 
-.en, .it, .de, .ru { display:none; }
-.en:lang(en), .it:lang(it), .de:lang(de), .ru:lang(ru) { display:block; }
+.en, .it, .de, .la { display:none; }
+.en:lang(en), .it:lang(it), .de:lang(de), .la:lang(la) { display:block; }
