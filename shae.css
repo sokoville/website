@@ -1,5 +1,15 @@
+html {
+   font-family: Arimo;
+}
+
+.background {
+    padding: 20px; 
+    color: darkred; 
+    background-color: chartreuse;
+}
+
 #grandma {
     position: fixed; 
     left: 2em; 
-    bottom: -0.1em
+    bottom: -0.1em;
 }
