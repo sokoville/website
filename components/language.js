@@ -34,7 +34,7 @@ class Latin extends HTMLElement {
 	}
   
 	connectedCallback() {
-		this.innerHTML = `<span id="langselect" onclick="togglelang('la')"><a href="?l=la">Latin</a></span>`;
+		this.innerHTML = `<span id="langselect" onclick="togglelang('la')"><a href="?l=la">Latina</a></span>`;
 	}
 }
 

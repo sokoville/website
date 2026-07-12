@@ -50,6 +50,16 @@ h2 {
     display: none;
 }
 
+.view_more_de:not(:checked) ~ label,
+.view_more_de:checked ~ .hidden {
+    display: block;
+}
+
+.view_more_de,
+.view_more_de:checked ~ label {
+    display: none;
+}
+
 @media only screen and (max-width: 1000px) {
     h1 {
         text-align: center;
