@@ -11,15 +11,16 @@ class Footer extends HTMLElement {
             </div>-->
 			<a href="https://www.twitter.com/"><img src="https://deadworld.de/badges/twitter.gif" alt="twitter"></a>
 			<!--<a href="https://discord.gg/"><img src="https://deadworld.de/badges/discord.gif" alt="discord server"></a>-->
-			<a href="https://steamcommunity.com/profiles/76561198852125837/" title="play counter strike with me"><img src="https://deadworld.de/badges/playwithsteam.jpg" alt="profile steam"></a>
-			<img src="https://deadworld.de/badges/anybrowse.gif">
-			<img src="https://deadworld.de/badges/antinft.gif">
-			<a href="https://www.mozilla.org/nl/firefox/"><img src="https://deadworld.de/badges/anythingbut.gif"></a>
-			<img src="https://deadworld.de/badges/cogs.gif">
+			<a href="https://steamcommunity.com/profiles/76561198852125837/" title="play counter strike with me"><img src="https://deadworld.de/badges/playwithsteam.jpg" alt="steam"></a>
+            <a href="https://letterboxd.com/iminthecut/" title="letterboxd"><img src="https://deadworld.de/badges/letterboxd.png" alt="letterboxd"></a>
+			<img src="https://deadworld.de/badges/anybrowse.gif" alt="">
+			<img src="https://deadworld.de/badges/antinft.gif" alt="">
+			<a href="https://www.mozilla.org/nl/firefox/"><img src="https://deadworld.de/badges/anythingbut.gif" alt=""></a>
+			<img src="https://deadworld.de/badges/cogs.gif" alt="">
 			<a href="https://youtu.be/EDsc5A1LQMs?si=TyDRH-74LRuM67d_" title="counter strike source: a beautiful creation"><img src="https://deadworld.de/badges/cs.gif" alt="counter strike source"></a>
-			<img src="https://deadworld.de/badges/fingerofgod.gif">
-			<a href="https://www.youtube.com/watch?v=S5L3tESenlU" title="põgene vaba laps"><img src="https://deadworld.de/badges/howtobecomeanangel.gif"></a>
-			<img src="https://deadworld.de/badges/mousepow.gif">
+			<img src="https://deadworld.de/badges/fingerofgod.gif" alt="">
+			<a href="https://www.youtube.com/watch?v=S5L3tESenlU" title="põgene vaba laps"><img src="https://deadworld.de/badges/howtobecomeanangel.gif" alt=""></a>
+			<img src="https://deadworld.de/badges/mousepow.gif" alt="">
 			<br>
 		</footer>
 	`;}

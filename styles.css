@@ -60,6 +60,26 @@ h2 {
     display: none;
 }
 
+.view_more_nl:not(:checked) ~ label,
+.view_more_nl:checked ~ .hidden {
+    display: block;
+}
+
+.view_more_nl,
+.view_more_nl:checked ~ label {
+    display: none;
+}
+
+.view_more_la:not(:checked) ~ label,
+.view_more_la:checked ~ .hidden {
+    display: block;
+}
+
+.view_more_la,
+.view_more_la:checked ~ label {
+    display: none;
+}
+
 @media only screen and (max-width: 1000px) {
     h1 {
         text-align: center;
