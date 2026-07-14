@@ -96,6 +96,10 @@ function zoom() {
     document.body.style.zoom = hscale;
 }
 
+function flip(callback) {
+    callback();
+}
+
 (function() {
     console.log(window.location.origin);
     zoom();
