@@ -35,10 +35,9 @@ function successHandler(value) {
             img = "https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png";
         }
         imgcache.src = img;
-        let el_info = document.querySelector(".info");
-        let el_logo = document.querySelector(".info .logo");
-        let el_artist = document.querySelector(".info .artist");
-        let el_title = document.querySelector(".info .title");
+        let el_logo = document.querySelector(".logo");
+        let el_artist = document.querySelector(".artist");
+        let el_title = document.querySelector(".title");
         if (track["@attr"] == undefined) {
             if (playing) {
                 // Stop Playing
