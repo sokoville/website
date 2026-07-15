@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 99%">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>online notepad</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="matthew.css">
+        <script>
+            function save_input() {
+                var userInput = document.getElementById("input").value;
+                var a = document.createElement("a");
+                var file = new Blob([userInput], {type: 'text'});
+                a.href = URL.createObjectURL(file);
+                a.download = "notepad.txt";
+                a.click();
+            }
+        </script>
+    </head>
+    <body id="notepad" style="height: 99%;">
+        <textarea id="input" placeholder="Type something..." style="width: calc(100% - 10px); height: calc(99% - 2em); resize: none;"></textarea>
+        <button id="download" onclick="save_input()" style="position: fixed; bottom: 10px; left: 10px; z-index: 9999; font-family: Arimo;">Download</button>
+    </body>
+</html>
+
+        
