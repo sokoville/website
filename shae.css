@@ -1,11 +1,10 @@
 html {
-   font-family:'Times New Roman', Times, serif; color: rgb(23, 21, 21) ;
+   font-family:'Times New Roman', Times, serif; 
+   color: rgb(23, 21, 21);
 }
 
-.background {
-    padding: 20px; 
-    color: darkred; 
-    background-color: chartreuse; 
+main { 
+    margin: 4em 50em 0em 1.6em; 
 }
 
 #grandma {
@@ -19,13 +18,4 @@ html {
     right: .5em; 
     bottom: 0em;
     width: 20vw;
-}
-main { 
-    margin: 4em 50em 0em 1.6em; 
-}
-#somberdog {
-    right: 0.5em;; 
-    width: 4.2em;
-    margin-bottom: -1.5em  ;
-    margin-left: -.1.9em;
 }
