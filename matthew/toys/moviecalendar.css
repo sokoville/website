@@ -1,0 +1,7 @@
+.august7th2026 {
+    display: none;
+}
+
+.view_august7th2026:checked ~ .august7th2026 {
+    display: block;
+}
