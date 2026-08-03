@@ -1,7 +1,26 @@
-.august7th2026 {
-    display: none;
+html {
+    background-color:maroon;
+    color: white;
 }
 
-.view_august7th2026:checked ~ .august7th2026 {
-    display: block;
+button {
+    background: none;
+    border: none;
+    padding: 1px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: gold;
+}
+
+.popover {
+    border-style: double; 
+    padding: 0.5em; 
+    margin-top: 1em;
+    background-color: burlywood;
+}
+
+.month {
+    display: inline flow-root; 
+    margin-top: 1em;
+    vertical-align: top;
 }
