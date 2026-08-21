@@ -5,8 +5,9 @@ class Footer extends HTMLElement {
   
 	connectedCallback() { this.innerHTML = `
 		<footer>
+            <span id="footerhome" class="mobile"><a href="index.html">舎 — home.</a></span>
 			<br><small>last updated: 16.05.2025 (ver3)</small><br>
-            <!--<div style="height: 31px; display: inline-block; vertical-align: top;">
+            <!--<div style="heigh-t: 31px; display: inline-block; vertical-align: top;">
             <span style="font-size: 24px;"><a style="text-decoration: none;" href="https://deadworld.de/">舎</a> </span>
             </div>-->
 			<a href="https://www.twitter.com/"><img src="https://deadworld.de/badges/twitter.gif" alt="twitter"></a>
