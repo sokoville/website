@@ -20,7 +20,8 @@ footer {
 	position: absolute; 
 	bottom: 0em; 
 	text-align: center; 
-	width: 98%; 
+	width: 80%; 
+    margin-left: 10%;
 	left: 1%; 
 	height: calc(3.65em + 26px); 
 }
@@ -46,6 +47,11 @@ footer {
 .column {
     width: 800px;
     margin-left: calc(((100vw - 800px) / 2) - 2.1em)
+}
+
+#home {
+    position: fixed; 
+    bottom: 1.2rem;
 }
 
 @media only screen and (max-width: 900px) {
