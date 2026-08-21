@@ -4,12 +4,89 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>online notepad</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="matthew.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+
+            .fake-button {
+                height: 1.4rem;  
+                padding-left: 0.25rem;
+                padding-right: 0.25rem;
+                padding-bottom: 0.08rem;
+                padding-top: 0.2rem;
+                background-color: #e9e9ed;
+                border: 1px solid #767676;
+                border-radius: 4px;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .fake-button:hover {
+                background-color: #d0d0d7;
+            }
+
+            body:has(#times:checked) #input {
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            body:has(#comic:checked) #input {
+                font-family: "Comic Relief", system-ui;
+            }
+
+            body:has(#darkmode:checked) {
+                --background-color: #212121; 
+                --color: white;
+                --darkmode-button: none;
+                --lightmode-button: inline;
+            }
+
+            body:has(#lightmode:checked) {
+                --background-color: white; 
+                --color: blacks;
+                --darkmode-button: inline;
+                --lightmode-button: none;
+            }
+
+            body {
+                background-color: var(--background-color, white);
+                color: var(--color, black)
+            }
+
+            #input {
+                background: var(--background-color, white);
+                color: var(--color, black);
+                border-width: 1px;
+                border-color: #767676;
+            }
+            
+            #lightmode-button {
+                display: var(--lightmode-button);
+                color: black;
+            }
+            
+            #darkmode-button {
+                display: var(--darkmode-button);
+            }
+        </style>
     </head>
-    <body id="notepad" style="height: 99%;">
-        <textarea id="input" placeholder="Type something..." style="width: calc(100% - 10px); height: calc(100% - (3em)); resize: none;"></textarea>
-        <button id="download" onclick="save_input()" style="position: fixed; bottom: 12px; left: 10px; z-index: 9999; font-family: Arimo;">Download</button>
+    <body id="notepad" style="height: 100%;">
+        <span style="width: 100%;">
+            notepad/
+            <span style="float: right; margin-right: 10px;"><a href="../../matthew.html">⬑ back</a></span>
+        </span>
+        <textarea id="input" placeholder="Type something..." style="width: calc(100% - 10px); height: calc(100% - (4.5rem)); resize: none;" spellcheck="true"></textarea>
+        <div style="height: calc(3.6rem - 10px); position: fixed; bottom: 0rem; left: 10px; align-content: center; width: calc(100% - 20px)">
+            <button id="download" onclick="save_input()" style="height: 1.4rem; padding: 0.25rem; z-index: 9999; font-family: Arimo; margin-bottom: 4px;">Download</button>
+            <span style="float: right;">
+                <select name="font">
+                    <option value="times" id="times" selected>Times New Roman</option>
+                    <option value="comic" id="comic">Comic Sans</option>
+                </select>
+                <input type="radio" id="darkmode" name="brightness" style="display: none;">
+                <label class="fake-button" for="darkmode" id="darkmode-button">⏾</label>
+                <input type="radio" id="lightmode" name="brightness" checked style="display: none;">
+                <label class="fake-button" for="lightmode" id="lightmode-button">☼</label>
+            </span>
+        </div>
     </body>
     <script>
         const input = document.getElementById("input"); 

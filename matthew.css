@@ -1,5 +1,4 @@
 body {
-    background-color: ivory;
     font-family: "Garamond";
 	text-align: left;
 }
@@ -30,6 +29,18 @@ footer {
     font-size: 1.2em; 
     white-space: pre-wrap;
     font-weight: 600;
+}
+
+.ivory {
+    background-color: ivory;
+}
+
+.flex {
+    display: flex;
+}
+
+.col {
+    flex: 1;
 }
 
 .column {
