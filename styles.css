@@ -124,15 +124,5 @@ h2 {
     }
 }
 
-@media (scripting: none) {
-    .script_based {
-        display: none;
-    }
-
-    .langs {
-        display: none;
-    }
-}
-
 .en, .it, .de, .la, .nl { display:none; }
 .en:lang(en), .it:lang(it), .de:lang(de), .la:lang(la), .nl:lang(nl) { display:block; }
