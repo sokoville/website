@@ -149,6 +149,7 @@ article {
 
 code {
     font-family: monospace;
+    background-color: gainsboro;
 }
 
 @media only screen and (max-width: 900px) {

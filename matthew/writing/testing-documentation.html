@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>3D Engine Temporary Documentation @ deadworldonline</title>
+		<link rel="stylesheet" href="../../styles.css">
+        <link rel="stylesheet" href="../../matthew.css">
+	</head>
+	<body id="writing">
+		<div id="page_container">
+			<div class="content">
+                <h2>3D Engine Temporary Documentation</h2>
+                <article>
+                    <h4>Setting up the level editor</h4>
+                    <ol>
+                        <li>Download <strong>Trenchroom</strong> and go through it's installer.
+                            (The <strong>FGD</strong> files provided with the engine have been written to the <strong>Quake FGD</strong> standard so they should work with any quake compatible level editor but they have <strong>ONLY</strong> been tested in Trenchbroom.)</li>
+                        <li>While Trenchbroom is installing, download the zip-file called "<code>TrenchMappingFiles.zip</code>".</li>
+                        <li>Once Trenchbroom is instaled, create a new folder in the Trenchbroom "<code>games/</code>" folder called "<code>3DEngine</code>"; copy the <code>*.fgd</code>, <code>*.cfg</code> and icon from the zip-file into this folder.
+                            This will add the <strong>3D Engine</strong> to Trenchbroom's games list.</li>
+                        <li>Make a cool map!</li>
+                    </ol>
+                    <h4>Building and testing your map</h4>
+                    <p>
+                        All maps are built at runtime so to test your map simply copy the <code>*.map</code> file into the <strong>maps folder</strong> "<code>%appdata%\Godot\app_userdata\3dengine\maps</code>" and run the game. 
+                        (<strong>Important!</strong> Switching maps currently crashes the engine so with me by renaming your map to "<code>subway.map</code>")
+                    </p>
+                    <h4>Adding custom textures</h4>
+                    <p>
+                        Adding custom texture <i>should</i> be as easy as copying a <code>*.jpg</code>, <code>*.bmp</code> or <code>*.png</code> into the <code>trenchbroom/textures</code> folder in your <code>RequiredMappingResources</code> folder as well as into "<code>%appdata%\Godot\app_userdata\3dengine\texture</code>"
+                        The version in the <code>trenchbroom/textures</code> folder is just a placeholder for trenchbroom to use while the version in <code>%appdata%</code> will be used to build the map. 
+                        Any two images with the same filename may be linked this way.
+                        (<strong>Note:</strong> Decals <strong>MUST</strong> be a <code>*.png</code>.)
+                    </p>
+                    <h4>Adding custom models</h4>
+                    <p>
+                        Copy your <code>*.obj</code> or <code>*.glb</code> into the <code>meshes/</code> folder inside of <code>RequiredMappingResources</code> folder.
+                        Add <strong>specifically</strong> a <code>*.glb</code> of the same mesh into "<code>trenchbroom/fgd/models</code>", this will act as a placeholder for the mesh in Trenchbroom.
+                    </p>
+                </article>
+                <br>
+                <a href="../writing.html">⬑ back</a>
+            </div>
+		</div>
+	</body>
+</html>
