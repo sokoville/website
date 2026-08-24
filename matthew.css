@@ -12,6 +12,11 @@ h2 {
     font-family: "Garamond", serif;
 }
 
+h4 {
+    font-family: "Arimo";
+    margin-bottom: 0rem;
+}
+
 a {
 	color: green;
 }
@@ -25,8 +30,18 @@ footer {
 	height: calc(3.65em + 26px); 
 }
 
+article {
+    margin-left: 1rem;
+    width: 80%;
+}
+
 #catalogue h2 {
     font-family: Arimo; 
+}
+
+#writing h2 {
+    font-family: Arimo; 
+    margin-bottom: 0.5rem;
 }
 
 #undertitle {
@@ -91,7 +106,6 @@ footer {
 
 .main_link {
     margin-left: 0.3em; 
-    font-size: 1.1em; 
     font-weight: 600; 
     font-family: "Arimo", sans-serif
 }
@@ -131,6 +145,10 @@ footer {
 .column {
     width: calc(800px * 0.95);
     margin-left: calc(((100vw - (800px * 0.95)) / 2) - 2.1em)
+}
+
+code {
+    font-family: monospace;
 }
 
 @media only screen and (max-width: 900px) {
