@@ -1,4 +1,4 @@
-const WORKER_URL = "https://last-fm-proxy.matthewbogen06.workers.dev";
+const WORKER_URL = "https://last-fm-proxy.matthewbogen06.workers.dev/";
 
 let params = new URLSearchParams(window.location.search);
 let playing = false;
@@ -48,7 +48,7 @@ function successHandler(value) {
             // Start Playing
             console.log("Started playing track.");
             playing = true;
-            document.getElementById("musicdisplay").style.display = "flex";
+            document.getElementById("music_display").style.display = "flex";
             // document.getElementById("bruh").style.display = "block";
             imgcache.src = img;
             el_logo.src = img;
@@ -66,7 +66,7 @@ function successHandler(value) {
                     el_artist.innerText = track.artist.name;
                     el_title.innerText = track.name;
                 });
-                document.getElementById("musicdisplay").style.display = "flex";
+                document.getElementById("music_display").style.display = "flex";
                 // document.getElementById("bruh").style.display = "block ";
             }
         }

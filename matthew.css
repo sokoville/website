@@ -72,6 +72,24 @@ footer {
     padding: 3px"
 }
 
+#music_display {
+    display: none;
+}
+
+#music_display #play_button {
+    font-size: 0.9rem;
+}
+
+#music_display a {
+    text-align: center;
+}
+
+
+#music_display img {
+    width: 2rem; 
+    vertical-align: middle;
+}
+
 .main_link {
     margin-left: 0.3em; 
     font-size: 1.1em; 
