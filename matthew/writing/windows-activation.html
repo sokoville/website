@@ -7,7 +7,16 @@
 		<title>free windows activation @ deadworldonline</title>
 		<link rel="stylesheet" href="../../styles.css">
         <link rel="stylesheet" href="../../matthew.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible">
 	</head>
+    <script>    
+        function select_font() {
+          var selector = document.getElementById('font_selector');
+          var family = selector.options[selector.selectedIndex].value;
+          var paragraphs = document.querySelectorAll("p")
+          document.getElementById("writing").style.fontFamily = family
+        }
+    </script>
 	<body id="writing">
 		<div id="page_container">
 			<div class="content">
@@ -35,8 +44,14 @@
                         Enterprise: <code>NPPR9-FWDCX-D2C8J-H872K-2YT43</code><br>
                     </p>
                 </article>
-                <br>
                 <a href="../writing.html">⬑ back</a>
+
+                <select id="font_selector" name="font_selector" onchange="select_font();" class="top_right">
+                    <option selected> Serif </option>
+                    <option> Atkinson Hyperlegible </option>
+                    <option> Sans-Serif </option>
+                    <option> Comic Sans MS </option>
+                </select>
             </div>
 		</div>
 	</body>

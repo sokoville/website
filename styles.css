@@ -3,6 +3,7 @@
 	src: url("fonts/EBGaramond-VariableFont_wght.ttf") format("truetype");
 }
 
+
 @font-face {
 	font-family: "Arimo";
 	src: url("fonts/Arimo-VariableFont_wght.ttf") format("truetype")
@@ -23,6 +24,12 @@ h2 {
 .bottom_right {
     position: absolute; 
     bottom: 1.2rem; 
+    right: 2rem
+}
+
+.top_right {
+    position: absolute; 
+    top: 1.2rem; 
     right: 2rem
 }
 
