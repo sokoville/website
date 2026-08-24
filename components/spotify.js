@@ -87,21 +87,11 @@ function tick() {
     rq.catch(failureHandler);
 }
 
-function zoom() {
-    let width = document.documentElement.clientWidth;
-    let height = document.documentElement.clientHeight;
-    let csize = document.documentElement.getBoundingClientRect();
-    let wscale = width / csize.width;
-    let hscale = height / csize.height;
-    document.body.style.zoom = hscale;
-}
-
 function flip(callback) {
     callback();
 }
 
 (function() {
     console.log(window.location.origin);
-    zoom();
     tick();
 })();
