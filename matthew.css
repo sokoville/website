@@ -69,11 +69,7 @@ footer {
 #st_george img {
     height: 90%;
     background-image: url('images/gif/background.gif');
-    padding: 3px"
-}
-
-#music_display {
-    display: none;
+    padding: 3px
 }
 
 #music_display #play_button {
