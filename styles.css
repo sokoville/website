@@ -20,8 +20,28 @@ h2 {
 	margin: 0.25em 1.6em 0em 1.6em;
 }
 
+.bottom_right {
+    position: absolute; 
+    bottom: 1.2rem; 
+    right: 2rem
+}
+
+.bottom_left {
+    position: absolute; 
+    bottom: 1.2rem; 
+    left: 2rem
+}
+
 .wavy {
     text-decoration: wavy underline;
+}
+
+.plain {
+    text-decoration: none;
+}
+
+.no_wrap {
+    white-space: nowrap;
 }
 
 .fake_link {

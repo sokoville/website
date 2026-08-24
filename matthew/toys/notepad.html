@@ -4,69 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>online notepad</title>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
-
-            .fake-button {
-                height: 1.4rem;  
-                padding-left: 0.25rem;
-                padding-right: 0.25rem;
-                padding-bottom: 0.08rem;
-                padding-top: 0.2rem;
-                background-color: #e9e9ed;
-                border: 1px solid #767676;
-                border-radius: 4px;
-                cursor: pointer;
-                user-select: none;
-            }
-
-            .fake-button:hover {
-                background-color: #d0d0d7;
-            }
-
-            body:has(#times:checked) #input {
-                font-family: 'Times New Roman', Times, serif;
-            }
-
-            body:has(#comic:checked) #input {
-                font-family: "Comic Relief", system-ui;
-            }
-
-            body:has(#darkmode:checked) {
-                --background-color: #212121; 
-                --color: white;
-                --darkmode-button: none;
-                --lightmode-button: inline;
-            }
-
-            body:has(#lightmode:checked) {
-                --background-color: white; 
-                --color: blacks;
-                --darkmode-button: inline;
-                --lightmode-button: none;
-            }
-
-            body {
-                background-color: var(--background-color, white);
-                color: var(--color, black)
-            }
-
-            #input {
-                background: var(--background-color, white);
-                color: var(--color, black);
-                border-width: 1px;
-                border-color: #767676;
-            }
-            
-            #lightmode-button {
-                display: var(--lightmode-button);
-                color: black;
-            }
-            
-            #darkmode-button {
-                display: var(--darkmode-button);
-            }
-        </style>
+        <link rel="stylesheet" href="notepad.css">
     </head>
     <body id="notepad" style="height: 100%;">
         <span style="width: 100%;">
@@ -82,9 +20,9 @@
                     <option value="comic" id="comic">Comic Sans</option>
                 </select>
                 <input type="radio" id="darkmode" name="brightness" style="display: none;">
-                <label class="fake-button" for="darkmode" id="darkmode-button">⏾</label>
+                <label class="fake_button" for="darkmode" id="darkmode-button">⏾</label>
                 <input type="radio" id="lightmode" name="brightness" checked style="display: none;">
-                <label class="fake-button" for="lightmode" id="lightmode-button">☼</label>
+                <label class="fake_button" for="lightmode" id="lightmode-button">☼</label>
             </span>
         </div>
     </body>

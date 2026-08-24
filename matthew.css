@@ -1,8 +1,3 @@
-@font-face {
-	font-family: "Arimo";
-	src: url("fonts/Arimo-VariableFont_wght.ttf") format("truetype")
-}
-
 body {
 	text-align: left;
 }
@@ -15,11 +10,6 @@ h1 {
 
 h2 {
     font-family: "Garamond", serif;
-    margin-bottom: 0.5em;
-}
-
-p {
-    margin-top: 0.5em;
 }
 
 a {
@@ -42,6 +32,14 @@ footer {
 #undertitle {
     font-family: "Arimo", sans-serif;
     font-weight: 800;
+    margin-left: 0.5rem;
+}
+
+#undertitle .admission_of_guilt {
+    font-weight: normal;
+    margin: 0.4rem 1rem 0.25rem;
+    display: inline-block;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #article_table {
@@ -62,12 +60,6 @@ footer {
     text-decoration: none;
 }
 
-#home {
-    position: fixed; 
-    bottom: 1.2rem;
-    left: 2rem;
-}
-
 #st_george {
     height: 80vh; 
     float: right; 
@@ -83,12 +75,17 @@ footer {
 .main_link {
     margin-left: 0.3em; 
     font-size: 1.1em; 
-    font-weight: 550; 
+    font-weight: 600; 
     font-family: "Arimo", sans-serif
 }
 
 .main_link br {
     margin-bottom: 0.5rem;
+}
+
+.manicule {
+    font-family: "Garamond";
+    font-weight: bold;
 }
 
 .smaller {
@@ -99,13 +96,13 @@ footer {
     white-space: pre-wrap;
 }
 
-.ivory {
-    background-color: ivory;
+.half_margins {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
-.column {
-    width: calc(800px * 0.95);
-    margin-left: calc(((100vw - (800px * 0.95)) / 2) - 2.1em)
+.ivory {
+    background-color: ivory;
 }
 
 .bordered {
@@ -114,10 +111,9 @@ footer {
 	border-style: ridge;
 }
 
-.bottom_right {
-    position: absolute; 
-    bottom: 1.2rem; 
-    right: 2rem
+.column {
+    width: calc(800px * 0.95);
+    margin-left: calc(((100vw - (800px * 0.95)) / 2) - 2.1em)
 }
 
 @media only screen and (max-width: 900px) {
