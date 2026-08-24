@@ -134,6 +134,7 @@ footer {
 
     footer {
         height: calc(9.65em + 26px);
-        width: 100%; 
+        width: calc(100% - 16px); 
+        margin: 0rem;
     }
 }
