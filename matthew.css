@@ -20,8 +20,8 @@ footer {
 	position: absolute; 
 	bottom: 0em; 
 	text-align: center; 
-	width: 80%; 
-    margin-left: calc(10% - 8px);
+	width: 65%; 
+    margin-left: calc(17.5% - 8px);
 	height: calc(3.65em + 26px); 
 }
 
@@ -35,7 +35,7 @@ footer {
     margin-left: 0.5rem;
 }
 
-#undertitle .admission_of_guilt {
+#undertitle #admission_of_guilt {
     font-weight: normal;
     margin: 0.4rem 1rem 0.25rem;
     display: inline-block;
@@ -133,6 +133,7 @@ footer {
     }
 
     footer {
-        height: calc(9.65em + 26px); 
+        height: calc(9.65em + 26px);
+        width: 100%; 
     }
 }
