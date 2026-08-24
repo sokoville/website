@@ -1,15 +1,25 @@
+@font-face {
+	font-family: "Arimo";
+	src: url("fonts/Arimo-VariableFont_wght.ttf") format("truetype")
+}
+
 body {
-    font-family: "Garamond";
 	text-align: left;
 }
 
 h1 {
-    font-size: 2.25em;
-    font-family: "Garamond", sans-serif;
+    font-family: "Garamond", serif;
+    font-size: 2em;
+    margin-bottom: 0.6rem;
 }
 
 h2 {
-    font-family: "Garamond", sans-serif;
+    font-family: "Garamond", serif;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-top: 0.5em;
 }
 
 a {
@@ -21,37 +31,93 @@ footer {
 	bottom: 0em; 
 	text-align: center; 
 	width: 80%; 
-    margin-left: 10%;
-	left: 1%; 
+    margin-left: calc(10% - 8px);
 	height: calc(3.65em + 26px); 
 }
 
-#undertitle_links {
-    font-size: 1.2em; 
+#catalogue h2 {
+    font-family: Arimo; 
+}
+
+#undertitle {
+    font-family: "Arimo", sans-serif;
+    font-weight: 800;
+}
+
+#article_table {
+    width: 100%; 
+    margin-top: 1em;
+}
+
+#article_table td {
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+}
+
+#article_table a {
+    font-family: "Arimo", sans-serif; 
+    font-weight: 500; 
+    font-size: 1.1em; 
+    text-decoration: none;
+}
+
+#home {
+    position: fixed; 
+    bottom: 1.2rem;
+    left: 2rem;
+}
+
+#st_george {
+    height: 80vh; 
+    float: right; 
+    margin-right: 10vw;
+}
+
+#st_george img {
+    height: 90%;
+    background-image: url('images/gif/background.gif');
+    padding: 3px"
+}
+
+.main_link {
+    margin-left: 0.3em; 
+    font-size: 1.1em; 
+    font-weight: 550; 
+    font-family: "Arimo", sans-serif
+}
+
+.main_link br {
+    margin-bottom: 0.5rem;
+}
+
+.smaller {
+    font-size: smaller;
+}
+
+.pre_wrap {
     white-space: pre-wrap;
-    font-weight: 600;
 }
 
 .ivory {
     background-color: ivory;
 }
 
-.flex {
-    display: flex;
-}
-
-.col {
-    flex: 1;
-}
-
 .column {
-    width: 800px;
-    margin-left: calc(((100vw - 800px) / 2) - 2.1em)
+    width: calc(800px * 0.95);
+    margin-left: calc(((100vw - (800px * 0.95)) / 2) - 2.1em)
 }
 
-#home {
-    position: fixed; 
-    bottom: 1.2rem;
+.bordered {
+	border-width: 3px; 
+	border-color: palevioletred;
+	border-style: ridge;
+}
+
+.bottom_right {
+    position: absolute; 
+    bottom: 1.2rem; 
+    right: 2rem
 }
 
 @media only screen and (max-width: 900px) {
@@ -60,7 +126,17 @@ footer {
     }
 
     .column {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    td {
+        display: block;
         width: 100%;
-        margin-left: 0px;
+        padding-left: 0.5em; 
+    }
+
+    footer {
+        height: calc(9.65em + 26px); 
     }
 }
