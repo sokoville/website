@@ -125,6 +125,10 @@ h2 {
 }
 
 @media (scripting: none) {
+    .script_based {
+        display: none;
+    }
+
     .langs {
         display: none;
     }

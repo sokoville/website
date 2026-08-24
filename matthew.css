@@ -84,8 +84,7 @@ footer {
     text-align: center;
 }
 
-
-#music_display img {
+#music_display a img {
     width: 2rem; 
     vertical-align: middle;
 }
