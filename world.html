@@ -1,53 +1,45 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <body>
+        <h2>Upload File</h2>
 
-<h2>Upload File</h2>
+        <input type="file" id="fileInput">
+        <input type="password" id="pass">
+        <button id="uploadBtn">Upload</button>
 
-<input type="file" id="fileInput">
-<button id="uploadBtn">Upload</button>
+        <p id="status"></p>
 
-<p id="status"></p>
+        <script>
+            const workerUrl = "https://github-upload.matthewbogen06.workers.dev/";
 
-<script>
-const workerUrl =
-  "https://github-upload.matthewbogen06.workers.dev/";
+            document.getElementById("uploadBtn").addEventListener("click", async () => {
+                const file = document.getElementById("fileInput").files[0];
+                const pass = document.getElementById("pass").value;
 
-document
-.getElementById("uploadBtn")
-.addEventListener("click", async () => {
+                if (!file) {
+                    alert("Choose a file");
+                    return;
+                }
+                if (!pass) {
+                    alert("Enter a password");
+                    return;
+                }
 
-  const file =
-    document.getElementById("fileInput").files[0];
+                const formData = new FormData();
+                formData.append("file", file);
+                formData.append("password", pass);
 
-  if (!file) {
-    alert("Choose a file");
-    return;
-  }
+                document.getElementById("status").innerText = "Uploading...";
 
-  const formData = new FormData();
+                const response = await fetch(workerUrl, {method: "POST", body: formData});
+                const result = await response.json();
 
-  formData.append("file", file);
-
-  document.getElementById("status")
-    .innerText = "Uploading...";
-
-  const response = await fetch(workerUrl, {
-    method: "POST",
-    body: formData
-  });
-
-  const result = await response.json();
-
-  if (result.success) {
-    document.getElementById("status")
-      .innerText = "Upload successful!";
-  } else {
-    document.getElementById("status")
-      .innerText = "Upload failed";
-  }
-});
-</script>
-
-</body>
+                if (result.success) {
+                    document.getElementById("status").innerText = "Upload successful!";
+                } else {
+                    document.getElementById("status").innerText = "Upload failed";
+                }
+            });
+        </script>
+    </body>
 </html>
