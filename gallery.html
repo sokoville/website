@@ -228,14 +228,14 @@
 
 <script>
   // ─── CONFIG ──────────────────────────────────────────────────────────────────
-  const GITHUB_OWNER = "sokoville";   // e.g. "acme-corp"
-  const GITHUB_REPO  = "website";    // e.g. "my-repo"
+  const GIT_OWNER = "deadworld";   // e.g. "acme-corp"
+  const GIT_REPO  = "deadworld-gallery";    // e.g. "my-repo"
   const BRANCH       = "main";                // branch where uploads live
   const BATCH_SIZE   = 9;                     // images per scroll load
   // ─────────────────────────────────────────────────────────────────────────────
 
   const RAW_BASE =
-    `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${BRANCH}/uploads/`;
+    `https://gitgud.io/${GIT_OWNER}/${GIT_REPO}/-/raw/${BRANCH}/uploads/`;
 
   const grid     = document.getElementById("grid");
   const spinner  = document.getElementById("spinner");
@@ -249,35 +249,34 @@
 
   // ── 1. Fetch the full file list from GitHub ──────────────────────────────────
   async function fetchFileList() {
-    const url =
-      `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}` +
-      `/contents/uploads?ref=${BRANCH}`;
+  const projectId = encodeURIComponent(`${GIT_OWNER}/${GIT_REPO}`);
+  const url =
+    `https://gitgud.io/api/v4/projects/${projectId}/repository/tree` +
+    `?path=uploads&ref=${BRANCH}&per_page=100`;
 
-    const res = await fetch(url, {
-      headers: { "Accept": "application/vnd.github+json" }
-    });
+  const res = await fetch(url, {
+    headers: { "Accept": "application/json" }
+  });
 
-    if (!res.ok) {
-      // Folder may not exist yet
-      if (res.status === 404) return [];
-      throw new Error(`GitHub API error ${res.status}`);
-    }
-
-    const entries = await res.json();
-
-    // Keep only files whose names start with a number
-    const numeric = entries
-      .filter(e => e.type === "file" && /^\d+\./i.test(e.name));
-
-    // Sort descending by number so newest (highest) appear first
-    numeric.sort((a, b) => {
-      const na = parseInt(a.name, 10);
-      const nb = parseInt(b.name, 10);
-      return nb - na;
-    });
-
-    return numeric;
+  if (!res.ok) {
+    if (res.status === 404) return [];
+    throw new Error(`GitLab API error ${res.status}`);
   }
+
+  const entries = await res.json();
+
+  // Keep only files whose names start with a number
+  const numeric = entries
+    .filter(e => e.type === "blob" && /^\d+\./i.test(e.name));
+
+  numeric.sort((a, b) => {
+    const na = parseInt(a.name, 10);
+    const nb = parseInt(b.name, 10);
+    return nb - na;
+  });
+
+  return numeric;
+}
 
   // ── 2. Render the next batch ─────────────────────────────────────────────────
   function renderBatch() {
