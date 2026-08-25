@@ -39,6 +39,14 @@ h2 {
     left: 2rem
 }
 
+.centered {
+    text-align: center;
+}
+
+.sans-serif {
+    font-family: "Arimo", Arial, Helvetica, sans-serif;
+}
+
 .wavy {
     text-decoration: wavy underline;
 }

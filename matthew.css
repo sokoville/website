@@ -12,6 +12,11 @@ h2 {
     font-family: "Garamond", serif;
 }
 
+h2 small {
+    font-size: 0.65em;
+}
+
+
 h4 {
     font-family: "Arimo";
     margin-bottom: 0rem;
@@ -33,6 +38,7 @@ footer {
 article {
     margin-left: 1rem;
     width: 80%;
+    overflow: auto;
 }
 
 #catalogue h2 {
@@ -104,6 +110,12 @@ article {
     vertical-align: middle;
 }
 
+.wiki_image {
+    float: right;
+    max-width: 35%;
+    margin: 0.5rem 0rem 0.5rem 2rem;
+}
+
 .main_link {
     margin-left: 0.3em; 
     font-weight: 600; 
@@ -143,8 +155,13 @@ article {
 }
 
 .column {
-    width: calc(800px * 0.95);
-    margin-left: calc(((100vw - (800px * 0.95)) / 2) - 2.1em)
+    width: calc(680px);
+    margin-left: calc(((100vw - (680px)) / 2) - (2.1rem + 8px))
+}
+
+.column article {
+    width: 100%;
+    line-height: 1.4;
 }
 
 code {
