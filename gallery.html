@@ -248,24 +248,18 @@
   let done       = false;
 
   // ── 1. Fetch the full file list from GitHub ──────────────────────────────────
-  async function fetchFileList() {
-  const projectId = encodeURIComponent(`${GIT_OWNER}/${GIT_REPO}`);
-  const url =
-    `https://gitgud.io/api/v4/projects/${projectId}/repository/tree` +
-    `?path=uploads&ref=${BRANCH}&per_page=100`;
+async function fetchFileList() {
+  const url = "https://get-gallery.matthewbogen06.workers.dev/"; // your new worker's URL
 
-  const res = await fetch(url, {
-    headers: { "Accept": "application/json" }
-  });
+  const res = await fetch(url);
 
   if (!res.ok) {
     if (res.status === 404) return [];
-    throw new Error(`GitLab API error ${res.status}`);
+    throw new Error(`GitLab proxy error ${res.status}`);
   }
 
   const entries = await res.json();
 
-  // Keep only files whose names start with a number
   const numeric = entries
     .filter(e => e.type === "blob" && /^\d+\./i.test(e.name));
 
